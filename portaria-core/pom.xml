@@ -15,5 +15,6 @@
   <modules>
     <module>portaria-domain</module>
     <module>portaria-persistence</module>
+    <module>portaria-wbusiness</module>
   </modules>
 </project>

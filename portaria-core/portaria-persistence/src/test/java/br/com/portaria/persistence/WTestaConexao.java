@@ -54,25 +54,26 @@ public class WTestaConexao {
 //		}
 
 		// Atualizar
-//		System.out.println("Insira o ID para atualizar: ");
-//		Long id1 = sc.nextLong();
-//		p = utilp.buscaPorId(id1);
-//		System.out.println(p);
-//		TabPessoa p2 = new TabPessoa();
-//		p2.setName("Marcelo Ferreira Lopez");
-//		p2.setCpf("00000000000");
-//		p2.setTabEmpresa(new TabEmpresa("xxxxxxxxxxx","Empresa Teste"));
-//		
-//		if (list.contains(p)) {	
-//			p.setName(p2.getName());
-//			p.setCpf(p2.getCpf());
-//			p.setTabEmpresa(p2.getTabEmpresa());
-//			utilp.atualiza(p);
-//			System.out.println("Atualizado com sucesso");
-//		} else {
-//			utilp.adiciona(p2);
-//			System.out.println("Adicionado com sucesso");
-//		}
+		System.out.println("Insira o ID para atualizar: ");
+		Long id1 = sc.nextLong();
+		p = utilp.buscaPorId(id1);
+		System.out.println(p);
+		
+		TabPessoa p2 = new TabPessoa();
+		p2.setName("Marcelo Ferreira Lopez");
+		p2.setCpf("00000000000");
+		p2.setTabEmpresa(new TabEmpresa("xxxxxxxxxxx","Empresa Teste"));
+		
+		if (list.contains(p)) {	
+			p.setName(p2.getName());
+			p.setCpf(p2.getCpf());
+			p.setTabEmpresa(p2.getTabEmpresa());
+			utilp.atualiza(p);
+			System.out.println("Atualizado com sucesso");
+		} else {
+			utilp.adiciona(p2);
+			System.out.println("Adicionado com sucesso");
+		}	
 
 //		utilp.listaTodos();
 

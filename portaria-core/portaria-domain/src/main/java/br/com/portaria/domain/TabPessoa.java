@@ -2,6 +2,7 @@ package br.com.portaria.domain;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -22,6 +23,7 @@ public class TabPessoa implements Serializable {
 	private String name;
 	private String cpf;
 
+	@Column(name = "tabEmpresa_id")
 	private TabEmpresa tabEmpresa;
 
 	public String getCpf() {
