@@ -14,5 +14,6 @@
 	</properties>
   <modules>
     <module>portaria-domain</module>
+    <module>portaria-persistence</module>
   </modules>
 </project>

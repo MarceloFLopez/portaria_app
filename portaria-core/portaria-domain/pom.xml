@@ -7,9 +7,7 @@
     <artifactId>portaria-core</artifactId>
     <version>0.0.1</version>
   </parent>
-  <groupId>br.com.portaria-core</groupId>
   <artifactId>portaria-domain</artifactId>
-  <version>0.0.1</version>
   <name>portaria-domain</name>
   <url>http://maven.apache.org</url>
   <properties>

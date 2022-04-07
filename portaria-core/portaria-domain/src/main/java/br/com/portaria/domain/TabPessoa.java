@@ -9,10 +9,9 @@ import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 
-
 @Entity
 @NamedQueries({ @NamedQuery(name = "TabPessoa.listAll", query = "SELECT t FROM TabPessoa t"),
-				@NamedQuery(name = "TabPessoa.name", query = "SELECT t FROM TabPessoa t WHERE t.name = :name") })
+		@NamedQuery(name = "TabPessoa.name", query = "SELECT t FROM TabPessoa t WHERE t.name = :name") })
 public class TabPessoa implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -22,6 +21,24 @@ public class TabPessoa implements Serializable {
 	private Long id;
 	private String name;
 	private String cpf;
+
+	private TabEmpresa tabEmpresa;
+
+	public String getCpf() {
+		return cpf;
+	}
+
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
+	}
+
+	public TabEmpresa getTabEmpresa() {
+		return tabEmpresa;
+	}
+
+	public void setTabEmpresa(TabEmpresa tabEmpresa) {
+		this.tabEmpresa = tabEmpresa;
+	}
 
 	public Long getId() {
 		return id;
@@ -47,7 +64,6 @@ public class TabPessoa implements Serializable {
 		return result;
 	}
 
-	
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -67,7 +83,7 @@ public class TabPessoa implements Serializable {
 
 	@Override
 	public String toString() {
-		return "TabPessoa [id=" + id + ", name=" + name + ", cpf=" + cpf + "]";
+		return "TabPessoa [id=" + id + ", name=" + name + ", cpf=" + cpf + ", tabEmpresa=" + tabEmpresa + "]";
 	}
-	
+
 }
