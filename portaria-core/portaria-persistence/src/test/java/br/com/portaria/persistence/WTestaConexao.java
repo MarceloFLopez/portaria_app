@@ -6,7 +6,9 @@ import java.util.Scanner;
 import javax.persistence.EntityManager;
 
 import br.com.portaria.domain.TabEmpresa;
+import br.com.portaria.domain.TabOperacao;
 import br.com.portaria.domain.TabPessoa;
+import br.com.portaria.domain.TabTransporte;
 import br.com.portaria.persistence.util.CRUDUtil;
 import br.com.portaria.persistence.util.JPAUtil;
 
@@ -16,69 +18,71 @@ public class WTestaConexao {
 		Scanner sc = new Scanner(System.in);
 		EntityManager em = JPAUtil.getEntityManager();
 
-		CRUDUtil<TabPessoa> utilp = new CRUDUtil<TabPessoa>(em, TabPessoa.class);
 		CRUDUtil<TabEmpresa> utile = new CRUDUtil<TabEmpresa>(em, TabEmpresa.class);
-//		CRUDUtil<Transporte> utilt = new CRUDUtil<Transporte>(em, Transporte.class);
-//		CRUDUtil<Operacao> utilo = new CRUDUtil<Operacao>(em, Operacao.class);
-
-		// Adicionar/Salvar
-		TabPessoa p = new TabPessoa();
-//		p.setCpf("33024955879");
-//		p.setName("Marcelo");
-//		p.setTabEmpresa(new TabEmpresa());
-//		utilp.adiciona(p);
+		CRUDUtil<TabPessoa> utilp = new CRUDUtil<TabPessoa>(em, TabPessoa.class);
+		CRUDUtil<TabTransporte> utilt = new CRUDUtil<TabTransporte>(em, TabTransporte.class);
+		CRUDUtil<TabOperacao> utilo = new CRUDUtil<TabOperacao>(em, TabOperacao.class);
 
 		/// recupero uma lista do banco de dados
 		List<TabPessoa> list = utilp.listaTodos();
-		list.forEach(System.out::println);
+//		list.forEach(System.out::println);
+
+//		TabEmpresa e = new TabEmpresa();
+//		e = utile.buscaPorId((long) 3);
+//		System.out.println(e);
+
+		// Adicionar/Salvar
+//		TabEmpresa e = new TabEmpresa();		
+//		e.setCnpj("45.950.626/0001-01");
+//		e.setName("Teste Empresa3");		
+//		utile.adiciona(e);		
+//		
+//		TabTransporte t = new TabTransporte();
+//		t.setModelo("Caminhão");
+//		t.setPlaca("xxxx-1235");
+//		utilt.adiciona(t);
+//		
+//		TabOperacao o = new TabOperacao();
+//		o.setName("Coleta");
+//		o.setData(new Date());
+//		utilo.adiciona(o);
+//
+//		TabPessoa p = new TabPessoa();
+//		p.setCpf("969.454.890-01");
+//		p.setName("Teste nome");
+//		p.setTabEmpresa(e);
+//		p.setTabOperacao(o);
+//		p.setTransporte(t);
+//		utilp.adiciona(p);
 
 		// BUSCAR
 //		System.out.println("Insira o ID para buscar: ");
 //		Long id = sc.nextLong();
-//		 p = utilp.buscaPorId(id);
-//		if (list.contains(p)) {
-//			System.out.println(p);
-//		} else {
-//			System.out.println("Id Inexistente");
-//		}
-
+//		TabEmpresa p = new TabEmpresa();
+//		p = utile.buscaPorId(id);
+//		System.out.println(p);
+		
 		// Remove
+		
+		list.forEach(System.out::println);
+		
 //		System.out.println("Insira o ID para remover: ");
 //		Long id1 = sc.nextLong();
-//		p = utilp.buscaPorId(id1);
-//		if(list.contains(p)) {
-//		utilp.remove(p);
-//		System.out.println("Removido com sucesso!");
-//		}else {
-//			System.out.println("Registro não existe ou já foi removido!");
-//		}
+//		TabPessoa e = new TabPessoa();
+//		e = utilp.buscaPorId(id1);//		
+//		utilp.remove(e);
 
 		// Atualizar
-		System.out.println("Insira o ID para atualizar: ");
-		Long id1 = sc.nextLong();
-		p = utilp.buscaPorId(id1);
-		System.out.println(p);
+//		System.out.println("Insira o ID para atualizar: ");
+//		Long id1 = sc.nextLong();
+//		TabPessoa p = new TabPessoa();		
+//		p = utilp.buscaPorId(id1);
+//		p.setCpf("330.249.558-70");
+//		p.setName("Marcelo");
+//		utilp.atualiza(p);
+//		System.out.println(p);
 		
-		TabPessoa p2 = new TabPessoa();
-		p2.setName("Marcelo Ferreira Lopez");
-		p2.setCpf("00000000000");
-		p2.setTabEmpresa(new TabEmpresa("xxxxxxxxxxx","Empresa Teste"));
 		
-		if (list.contains(p)) {	
-			p.setName(p2.getName());
-			p.setCpf(p2.getCpf());
-			p.setTabEmpresa(p2.getTabEmpresa());
-			utilp.atualiza(p);
-			System.out.println("Atualizado com sucesso");
-		} else {
-			utilp.adiciona(p2);
-			System.out.println("Adicionado com sucesso");
-		}	
-
-//		utilp.listaTodos();
-
-//		o.setTransporte(t);		
-//		utilo.adiciona(o);
-		sc.close();
 	}
+		
 }

@@ -8,10 +8,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
-
+import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
 @Entity
+@Table(uniqueConstraints = { @UniqueConstraint(columnNames = { "cnpj" }) })
 @NamedQueries({ @NamedQuery(name = "TabEmpresa.listAll", query = "SELECT t FROM TabEmpresa t"),
-		@NamedQuery(name = "TabEmpresa.name", query = "SELECT t FROM TabEmpresa t WHERE t.name = :name") })
+		@NamedQuery(name = "TabEmpresa.findColumnName", query = "SELECT t FROM TabEmpresa t WHERE t.name = :name") })
 public class TabEmpresa implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -21,11 +23,11 @@ public class TabEmpresa implements Serializable {
 	private Long id;
 	private String cnpj;
 	private String name;
+
 	
 	public TabEmpresa() {
-		
 	}
-	public TabEmpresa(String cnpj, String name) {
+	public TabEmpresa( String cnpj, String name) {
 		this.cnpj = cnpj;
 		this.name = name;
 	}

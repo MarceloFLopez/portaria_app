@@ -35,8 +35,7 @@ public class TabOperacaoDAO  implements Serializable {
 	public List<TabOperacao> ListAll() {
 		try {
 			return 
-			(List<TabOperacao>) em.createNamedQuery("TabOperacao.listAll")
-					.getResultList();
+			(List<TabOperacao>) em.createNamedQuery("TabOperacao.listAll").getResultList();
 		} catch (NoResultException e) {
 			e.getStackTrace();
 			return null;
@@ -45,8 +44,7 @@ public class TabOperacaoDAO  implements Serializable {
 	public TabOperacao findColumnName(String value) {
 		try {
 			return 
-			(TabOperacao) em.createNamedQuery("TabOperacao.name")
-					.getSingleResult();
+			(TabOperacao) em.createNamedQuery("TabOperacao.findColumName").getSingleResult();
 		} catch (NoResultException e) {
 			e.getStackTrace();
 			return null;

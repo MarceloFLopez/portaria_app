@@ -1,5 +1,7 @@
 package br.com.portaria.domain;
 
+import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -9,13 +11,15 @@ import javax.persistence.NamedQuery;
 
 @Entity
 @NamedQueries({ @NamedQuery(name = "TabOperacao.listAll", query = "SELECT t FROM TabOperacao t"),
-		@NamedQuery(name = "TabOperacao.name", query = "SELECT t FROM TabOperacao t WHERE t.name = :name") })
+		@NamedQuery(name = "TabOperacao.findColumName", query = "SELECT t FROM TabOperacao t WHERE t.name = :name") })
 public class TabOperacao {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String name;
+	private Date data;
+
 
 	public Long getId() {
 		return id;
@@ -31,6 +35,14 @@ public class TabOperacao {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public Date getData() {
+		return data;
+	}
+
+	public void setData(Date data) {
+		this.data = data;
 	}
 
 	@Override
@@ -60,7 +72,7 @@ public class TabOperacao {
 
 	@Override
 	public String toString() {
-		return "TabOperacao [id=" + id + ", name=" + name + "]";
+		return "TabOperacao [id=" + id + ", name=" + name + ", data=" + data +  "]";
 	}
 
 }

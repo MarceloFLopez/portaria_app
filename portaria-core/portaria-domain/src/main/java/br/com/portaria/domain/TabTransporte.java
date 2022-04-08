@@ -8,10 +8,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
-
+import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
 @Entity
+@Table(uniqueConstraints = { @UniqueConstraint(columnNames = { "placa" }) })
 @NamedQueries({ @NamedQuery(name = "TabTransporte.listAll", query = "SELECT t FROM TabTransporte t"),
-				@NamedQuery(name = "TabTransporte.name", query = "SELECT t FROM TabTransporte t WHERE t.placa = :placa") })
+				@NamedQuery(name = "TabTransporte.findColumName", query = "SELECT t FROM TabTransporte t WHERE t.placa = :placa") })
 public class TabTransporte implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -20,7 +22,8 @@ public class TabTransporte implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String modelo;
-	private String placa;
+	private String placa;	
+
 	public Long getId() {
 		return id;
 	}
@@ -39,6 +42,7 @@ public class TabTransporte implements Serializable {
 	public void setPlaca(String placa) {
 		this.placa = placa;
 	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -66,6 +70,8 @@ public class TabTransporte implements Serializable {
 	public String toString() {
 		return "TabTransporte [id=" + id + ", modelo=" + modelo + ", placa=" + placa + "]";
 	}
+	
+
 
 	
 }
