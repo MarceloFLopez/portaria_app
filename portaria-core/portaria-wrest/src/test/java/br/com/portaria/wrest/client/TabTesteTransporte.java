@@ -1,7 +1,5 @@
 package br.com.portaria.wrest.client;
 
-import br.com.portaria.domain.TabTransporte;
-
 public class TabTesteTransporte {
 
 	// Listar

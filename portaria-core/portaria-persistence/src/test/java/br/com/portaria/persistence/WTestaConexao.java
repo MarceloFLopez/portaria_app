@@ -1,10 +1,8 @@
 package br.com.portaria.persistence;
 
 import java.util.List;
-import java.util.Scanner;
 
 import javax.persistence.EntityManager;
-import javax.persistence.TypedQuery;
 
 import br.com.portaria.domain.TabEmpresa;
 import br.com.portaria.domain.TabOperacao;
@@ -16,7 +14,6 @@ import br.com.portaria.persistence.util.JPAUtil;
 public class WTestaConexao {
 
 	public static void main(String[] args) throws Exception {
-		Scanner sc = new Scanner(System.in);
 		EntityManager em = JPAUtil.getEntityManager();
 
 		CRUDUtil<TabEmpresa> utile = new CRUDUtil<TabEmpresa>(em, TabEmpresa.class);
