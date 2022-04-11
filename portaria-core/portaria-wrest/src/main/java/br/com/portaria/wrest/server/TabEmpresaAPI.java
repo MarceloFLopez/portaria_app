@@ -15,7 +15,7 @@ import javax.ws.rs.core.MediaType;
 import br.com.portaria.domain.TabEmpresa;
 import br.com.portaria.wbusiness.TabEmpresaBO;
 
-@Path("tabtransporteapi")
+@Path("tabempresaapi")
 public class TabEmpresaAPI  {
 
 	@Inject

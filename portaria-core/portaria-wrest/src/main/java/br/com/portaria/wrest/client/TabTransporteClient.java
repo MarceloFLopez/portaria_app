@@ -21,11 +21,11 @@ public class TabTransporteClient implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	// URL http://localhost:8080/portaria-wrest/rest/tabpessoaapi/findId/5
+	// URL http://localhost:8080/portaria-wrest/rest/tabtransporteapi/findId/5
 	private final String HOSTNAME = "http://localhost:8080/"; // teste
 	private final String API = "portaria-wrest/rest/";//
 	private final String PATH = "tabtransporteapi/";
-
+	
 	public List<TabTransporte> listAll() {
 		Gson gson = new Gson();
 		Client c = Client.create();
@@ -66,6 +66,15 @@ public class TabTransporteClient implements Serializable {
 		Gson gson = new Gson();
 		Client c = Client.create();
 		WebResource wr = c.resource(HOSTNAME + API + PATH + "salvar/").path("objeto");
+		gson = new GsonBuilder().registerTypeAdapter(Date.class, new DateSerializer()).create();
+		wr.type(MediaType.APPLICATION_JSON).accept(MediaType.APPLICATION_JSON).post(ClientResponse.class,
+				gson.toJson(objeto));
+	}
+	
+	public void atualizar(TabTransporte objeto) {
+		Gson gson = new Gson();
+		Client c = Client.create();
+		WebResource wr = c.resource(HOSTNAME + API + PATH + "atualizar/").path("objeto");
 		gson = new GsonBuilder().registerTypeAdapter(Date.class, new DateSerializer()).create();
 		wr.type(MediaType.APPLICATION_JSON).accept(MediaType.APPLICATION_JSON).post(ClientResponse.class,
 				gson.toJson(objeto));

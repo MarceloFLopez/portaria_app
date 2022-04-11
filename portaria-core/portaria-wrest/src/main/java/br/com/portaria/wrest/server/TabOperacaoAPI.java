@@ -12,46 +12,46 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
-import br.com.portaria.domain.TabTransporte;
-import br.com.portaria.wbusiness.TabTransporteBO;
+import br.com.portaria.domain.TabOperacao;
+import br.com.portaria.wbusiness.TabOperacaoBO;
 
-@Path("tabtransporteapi")
-public class TabTransporteAPI {
+@Path("taboperacaoapi")
+public class TabOperacaoAPI {
 
 	/**
-	 * API example, TabTransporte class
+	 * API example, TabOperacao class
 	 */
 	@Inject
-	private TabTransporteBO transporteBO;
+	private TabOperacaoBO operacaoBO;
 	
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("listAll")
-	public List<TabTransporte> listAll() throws Exception {
-		return transporteBO.listAll();
+	public List<TabOperacao> listAll() throws Exception {
+		return operacaoBO.listAll();
 	}
 	
 
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("findColumnName/{value}")
-	public TabTransporte findColumnModel(@PathParam("value") String value) throws Exception {
-		return transporteBO.findColumnName(value);
+	public TabOperacao findColumnModel(@PathParam("value") String value) throws Exception {
+		return operacaoBO.findColumnName(value);
 	}
 
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("findId/{id}")
-	public TabTransporte findId(@PathParam("id") String id) throws Exception {
-		return transporteBO.findId(new Long(id));		
+	public TabOperacao findId(@PathParam("id") String id) throws Exception {
+		return operacaoBO.findId(new Long(id));		
 	}
 
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("salvar/{t}")
-	public void salvar(TabTransporte t) throws Exception {
-		transporteBO.salvar(t);
+	public void salvar(TabOperacao t) throws Exception {
+		operacaoBO.salvar(t);
 		System.out.println("Registro salvo com sucesso!");
 	}
 	
@@ -59,8 +59,8 @@ public class TabTransporteAPI {
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("atualizar/{t}")
-	public void atualizar(TabTransporte t) throws Exception {
-		transporteBO.salvar(t);
+	public void atualizar(TabOperacao t) throws Exception {
+		operacaoBO.salvar(t);
 		System.out.println("Registro atualizado com sucesso!");
 	}
 
@@ -68,7 +68,7 @@ public class TabTransporteAPI {
 	@Path("remover/{id}")
 	@Produces(MediaType.APPLICATION_XML)
 	public String remover(@PathParam("id") String id) throws Exception {
-		transporteBO.remover(transporteBO.findId(new Long(id)));
+		operacaoBO.remover(operacaoBO.findId(new Long(id)));
 		return "Removido com sucesso!";
 	}
 	
