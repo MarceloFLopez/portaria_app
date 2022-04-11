@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Scanner;
 
 import javax.persistence.EntityManager;
+import javax.persistence.TypedQuery;
 
 import br.com.portaria.domain.TabEmpresa;
 import br.com.portaria.domain.TabOperacao;
@@ -25,6 +26,7 @@ public class WTestaConexao {
 
 		/// recupero uma lista do banco de dados
 		List<TabPessoa> list = utilp.listaTodos();
+		
 //		list.forEach(System.out::println);
 
 //		TabEmpresa e = new TabEmpresa();
@@ -64,7 +66,7 @@ public class WTestaConexao {
 		
 		// Remove
 		
-		list.forEach(System.out::println);
+//		list.forEach(System.out::println);
 		
 //		System.out.println("Insira o ID para remover: ");
 //		Long id1 = sc.nextLong();
@@ -84,5 +86,5 @@ public class WTestaConexao {
 		
 		
 	}
-		
+
 }

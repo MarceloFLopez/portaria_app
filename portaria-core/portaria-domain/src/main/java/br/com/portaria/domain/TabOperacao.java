@@ -10,8 +10,8 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 
 @Entity
-@NamedQueries({ @NamedQuery(name = "TabOperacao.listAll", query = "SELECT t FROM TabOperacao t"),
-		@NamedQuery(name = "TabOperacao.findColumName", query = "SELECT t FROM TabOperacao t WHERE t.name = :name") })
+@NamedQueries({ @NamedQuery(name = "TabOperacao.listAll",       query = "SELECT t FROM TabOperacao t"),
+				@NamedQuery(name = "TabOperacao.findColumName", query = "SELECT t FROM TabOperacao t WHERE t.name = :name") })
 public class TabOperacao {
 
 	@Id

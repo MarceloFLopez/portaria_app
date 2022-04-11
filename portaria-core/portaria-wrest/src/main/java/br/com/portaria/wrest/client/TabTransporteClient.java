@@ -1,5 +1,6 @@
 package br.com.portaria.wrest.client;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
@@ -12,54 +13,56 @@ import com.sun.jersey.api.client.Client;
 import com.sun.jersey.api.client.ClientResponse;
 import com.sun.jersey.api.client.WebResource;
 
-import br.com.portaria.domain.TabEmpresa;
+import br.com.portaria.domain.TabTransporte;
 import br.com.portaria.domain.util.DateDeserializer;
 import br.com.portaria.domain.util.DateSerializer;
 
-public class TabEmpresaClient {
+public class TabTransporteClient implements Serializable {
 
-	// URL http://localhost:8080/portaria-wrest/rest/tabemresaapi/listAll
-	private final String HOSTNAME = "http://localhost:8080/"; 
-	private final String API = "portaria-wrest/rest/";
+	private static final long serialVersionUID = 1L;
+
+	// URL http://localhost:8080/portaria-wrest/rest/tabpessoaapi/findId/5
+	private final String HOSTNAME = "http://localhost:8080/"; // teste
+	private final String API = "portaria-wrest/rest/";//
 	private final String PATH = "tabtransporteapi/";
-	
-	public List<TabEmpresa> listAll() {
+
+	public List<TabTransporte> listAll() {
 		Gson gson = new Gson();
 		Client c = Client.create();
 		// GET example
 		WebResource wr = c.resource(HOSTNAME + API + PATH + "listAll/");
 		String json = wr.get(String.class);
 		gson = new GsonBuilder().registerTypeAdapter(Date.class, new DateDeserializer()).create();
-		List<TabEmpresa> t = gson.fromJson(json, new TypeToken<List<TabEmpresa>>() {
+		List<TabTransporte> t = gson.fromJson(json, new TypeToken<List<TabTransporte>>() {
 		}.getType());
 		return t;
 	}
-	
-	public TabEmpresa findColumnModel(String value) {
+
+	public TabTransporte findColumnModel(String value) {
 		Gson gson = new Gson();
 		Client c = Client.create();
 		// GET example
-		WebResource wr = c.resource(HOSTNAME + API + PATH + "findColumnModel/" + value);
+		WebResource wr = c.resource(HOSTNAME + API + PATH + "findColumnName/" + value);
 		String json = wr.get(String.class);
 		gson = new GsonBuilder().registerTypeAdapter(Date.class, new DateDeserializer()).create();
-		TabEmpresa t = gson.fromJson(json, new TypeToken<TabEmpresa>() {
+		TabTransporte t = gson.fromJson(json, new TypeToken<TabTransporte>() {
 		}.getType());
 		return t;
 	}
-	
-	public TabEmpresa findId(String id) {
+
+	public TabTransporte findId(String id) {
 		Gson gson = new Gson();
 		Client c = Client.create();
 		// GET example
 		WebResource wr = c.resource(HOSTNAME + API + PATH + "findId/" + id);
 		String json = wr.get(String.class);
 		gson = new GsonBuilder().registerTypeAdapter(Date.class, new DateDeserializer()).create();
-		TabEmpresa t = gson.fromJson(json, new TypeToken<TabEmpresa>() {
+		TabTransporte t = gson.fromJson(json, new TypeToken<TabTransporte>() {
 		}.getType());
 		return t;
 	}
 
-	public void salvar(TabEmpresa objeto) {
+	public void salvar(TabTransporte objeto) {
 		Gson gson = new Gson();
 		Client c = Client.create();
 		WebResource wr = c.resource(HOSTNAME + API + PATH + "salvar/").path("objeto");
@@ -74,5 +77,5 @@ public class TabEmpresaClient {
 		String s = wr.accept(MediaType.APPLICATION_XML).delete(String.class);
 		return s;
 	}
-	
+
 }

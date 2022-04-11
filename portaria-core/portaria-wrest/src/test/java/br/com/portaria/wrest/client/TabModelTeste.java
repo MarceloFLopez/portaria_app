@@ -1,16 +1,17 @@
 package br.com.portaria.wrest.client;
 
 public class TabModelTeste {
-//listAll
-	//Empresa
+
+	// listAll
+	// Empresa
 	public static void main(String[] args) {
-		TabPessoaClient client = new TabPessoaClient();
+		TabEmpresaClient client = new TabEmpresaClient();
 		client.listAll().forEach(a ->{
 			System.out.println(a.toString());
 		});
 	}
-//	
-	//Pessoa
+
+	// Pessoa
 //	public static void main(String[] args) {
 //		TabPessoaClient client = new TabPessoaClient();
 //		client.listAll().forEach(a ->{
@@ -18,19 +19,29 @@ public class TabModelTeste {
 //		});
 //	}
 	
-	
+	// Transporte
 
-//remover
+
+	//remover
 //	public static void main(String[] args) {
-//	TabModelClient client = new TabModelClient();
+//		TabPessoaClient client = new TabPessoaClient();
 //	try {
-//		System.out.println(client.remover("1"));
+//		System.out.println(client.remover("9"));
 //	} catch (Exception e) {
 //		e.printStackTrace();
 //	}
 //}
-	
-	//Pessoa
+
+//	public static void main(String[] args) {
+//		TabEmpresaClient client = new TabEmpresaClient();
+//		try {
+//			System.out.println(client.remover("7"));
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
+//	}
+
+	// Pessoa
 //	public static void main(String[] args) {
 //		TabModelClient client = new TabModelClient();
 //		try {
@@ -40,13 +51,26 @@ public class TabModelTeste {
 //		}
 //	}
 
+//	public static void main(String[] args) {
+//		TabEmpresaClient client = new TabEmpresaClient();
+//		TabEmpresa e = new TabEmpresa();
+//		e = client.findColumnModel("Teste Empresa2");
+//		try {
+//			System.out.println(e);
+//		} catch (Exception e1) {
+//			e1.printStackTrace();
+//		}
+//	}
+
 //salvar
 //	public static void main(String[] args) {
-//		TabPessoaClient client = new TabPessoaClient();
+//		TabEmpresaClient client = new TabEmpresaClient();
+//		
 //		try {
-//			TabPessoa t = new TabPessoa();
-//			t.setName("Marcelo");
-//			client.salvar(t);
+//			TabEmpresa t = new TabEmpresa();
+//			t.setName("TEste");
+//			t.setCnpj("33024955874");
+//				client.salvar(t);
 //		} catch (Exception e) {
 //			e.printStackTrace();
 //		}
@@ -54,19 +78,18 @@ public class TabModelTeste {
 
 //atualizar
 //	public static void main(String[] args) {
-//		TabModelClient client = new TabModelClient();
+//		TabEmpresaClient client = new TabEmpresaClient();
 //		try {
 //			//find id
-//			TabModel t = client.findId("3");
-//			
+//			TabEmpresa t = client.findId("9");			
 //			//atualizar
-//			t.setColumnmodel("TESTE 3");
+//			t.setName("TESTE 3");
+//			t.setCnpj("xxxxxxxxxxxxxxxxxx");
+//			
 //			client.salvar(t);
 //		} catch (Exception e) {
 //			e.printStackTrace();
 //		}
 //	}
-
-
 
 }

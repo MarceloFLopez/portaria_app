@@ -42,7 +42,7 @@ public class TabPessoaAPI  {
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("findId/{id}")
 	public TabPessoa findId(@PathParam("id") String id) throws Exception {
-		return tabPessoaBO.findId(new Long(id));
+		return tabPessoaBO.findId(new Long(id));		
 	}
 
 	@POST
@@ -51,6 +51,7 @@ public class TabPessoaAPI  {
 	@Path("salvar/{t}")
 	public void salvar(TabPessoa t) throws Exception {
 		tabPessoaBO.salvar(t);
+		System.out.println("Registro salvo com sucesso!");
 	}
 
 	@DELETE

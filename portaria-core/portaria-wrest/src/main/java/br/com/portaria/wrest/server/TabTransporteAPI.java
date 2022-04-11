@@ -12,53 +12,56 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
-import br.com.portaria.domain.TabEmpresa;
-import br.com.portaria.wbusiness.TabEmpresaBO;
+import br.com.portaria.domain.TabTransporte;
+import br.com.portaria.domain.TabTransporte;
+import br.com.portaria.wbusiness.TabTransporteBO;
 
 @Path("tabtransporteapi")
-public class TabEmpresaAPI  {
-
-	@Inject
-	private TabEmpresaBO tabEmpresaBO;
+public class TabTransporteAPI {
 
 	/**
-	 * API example, TabModel class
+	 * API example, TabTransporte class
 	 */
+	@Inject
+	private TabTransporteBO transporteBO;
+	
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
-	@Path("listAll")
-	public List<TabEmpresa> listAll() throws Exception {
-		return tabEmpresaBO.listAll();
+	@Path("listALL")
+	public List<TabTransporte> listALL()throws Exception{
+		return transporteBO.listAll();
 	}
+	
 
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("findColumnName/{value}")
-	public TabEmpresa findColumnModel(@PathParam("value") String value ) throws Exception {
-		return tabEmpresaBO.findColumnName(value);
+	public TabTransporte findColumnModel(@PathParam("value") String value) throws Exception {
+		return transporteBO.findColumnName(value);
 	}
 
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("findId/{id}")
-	public TabEmpresa findId(@PathParam("id") String id) throws Exception {
-		return tabEmpresaBO.findId(new Long(id));
+	public TabTransporte findId(@PathParam("id") String id) throws Exception {
+		return transporteBO.findId(new Long(id));		
 	}
 
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("salvar/{t}")
-	public void salvar(TabEmpresa t) throws Exception {
-		tabEmpresaBO.salvar(t);
+	public void salvar(TabTransporte t) throws Exception {
+		transporteBO.salvar(t);
+		System.out.println("Registro salvo com sucesso!");
 	}
 
 	@DELETE
 	@Path("remover/{id}")
 	@Produces(MediaType.APPLICATION_XML)
 	public String remover(@PathParam("id") String id) throws Exception {
-		tabEmpresaBO.remover(tabEmpresaBO.findId(new Long(id)));
+		transporteBO.remover(transporteBO.findId(new Long(id)));
 		return "Removido com sucesso!";
 	}
-
+	
 }
