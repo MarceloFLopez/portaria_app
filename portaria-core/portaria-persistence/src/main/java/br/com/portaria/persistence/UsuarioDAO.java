@@ -39,7 +39,7 @@ public class UsuarioDAO {
 	public Usuario findColumnName(String value) {
 		try {
 			return 
-			(Usuario) em.createNamedQuery("Usuario.findColumName").getSingleResult();
+			(Usuario) em.createNamedQuery("Usuario.findColumnName").getSingleResult();
 		} catch (NoResultException e) {
 			e.getStackTrace();
 			return null;

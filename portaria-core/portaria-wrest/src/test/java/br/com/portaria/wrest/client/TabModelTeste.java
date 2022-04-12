@@ -1,15 +1,17 @@
 package br.com.portaria.wrest.client;
 
+import br.com.portaria.domain.TabEmpresa;
+
 public class TabModelTeste {
 
 	// listAll
 	// Empresa
-	public static void main(String[] args) {
-		TabEmpresaClient client = new TabEmpresaClient();
-		client.listAll().forEach(a ->{
-			System.out.println(a.toString());
-		});
-	}
+//	public static void main(String[] args) {
+//		TabEmpresaClient client = new TabEmpresaClient();
+//		client.listAll().forEach(a ->{
+//			System.out.println(a.toString());
+//		});
+//	}
 
 	// Pessoa
 //	public static void main(String[] args) {
@@ -50,17 +52,28 @@ public class TabModelTeste {
 //			e.printStackTrace();
 //		}
 //	}
-
+	
 //	public static void main(String[] args) {
-//		TabEmpresaClient client = new TabEmpresaClient();
-//		TabEmpresa e = new TabEmpresa();
-//		e = client.findColumnModel("Teste Empresa2");
-//		try {
-//			System.out.println(e);
-//		} catch (Exception e1) {
-//			e1.printStackTrace();
-//		}
+//	TabModelClient client = new TabModelClient();
+//	try {
+//		System.out.println(client.remover("1"));
+//	} catch (Exception e) {
+//		e.printStackTrace();
 //	}
+//}
+
+	//Find and print itens
+	public static void main(String[] args) {
+		TabEmpresaClient client = new TabEmpresaClient();
+		TabEmpresa t = client.findColumnModel("Teste Empresa1");
+		
+		System.out.println(t);
+		try {
+			
+		} catch (Exception e1) {
+			e1.printStackTrace();
+		}
+	}
 
 //salvar
 //	public static void main(String[] args) {

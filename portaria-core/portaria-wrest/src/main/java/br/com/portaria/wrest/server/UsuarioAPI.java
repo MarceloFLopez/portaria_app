@@ -15,6 +15,7 @@ import javax.ws.rs.core.MediaType;
 import br.com.portaria.domain.Usuario;
 import br.com.portaria.wbusiness.UsuarioBO;
 
+@Path("usuarioapi")
 public class UsuarioAPI {
 	/**
 	 * API example, TabTransporte class
@@ -33,7 +34,7 @@ public class UsuarioAPI {
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("findColumnName/{value}")
-	public Usuario findColumnModel(@PathParam("value") String value) throws Exception {
+	public Usuario findColumnName(@PathParam("value") String value) throws Exception {
 		return usuarioBO.findColumnName(value);
 	}
 

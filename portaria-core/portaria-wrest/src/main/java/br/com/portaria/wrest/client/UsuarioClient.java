@@ -13,7 +13,7 @@ import com.sun.jersey.api.client.Client;
 import com.sun.jersey.api.client.ClientResponse;
 import com.sun.jersey.api.client.WebResource;
 
-import br.com.portaria.domain.TabTransporte;
+import br.com.portaria.domain.Usuario;
 import br.com.portaria.domain.util.DateDeserializer;
 import br.com.portaria.domain.util.DateSerializer;
 
@@ -24,45 +24,45 @@ public class UsuarioClient implements Serializable {
 	// URL http://localhost:8080/portaria-wrest/rest/tabtransporteapi/findId/5
 	private final String HOSTNAME = "http://localhost:8080/"; // teste
 	private final String API = "portaria-wrest/rest/";//
-	private final String PATH = "tabtransporteapi/";
+	private final String PATH = "usuarioapi/";
 	
-	public List<TabTransporte> listAll() {
+	public List<Usuario> listAll() {
 		Gson gson = new Gson();
 		Client c = Client.create();
 		// GET example
 		WebResource wr = c.resource(HOSTNAME + API + PATH + "listAll/");
 		String json = wr.get(String.class);
 		gson = new GsonBuilder().registerTypeAdapter(Date.class, new DateDeserializer()).create();
-		List<TabTransporte> t = gson.fromJson(json, new TypeToken<List<TabTransporte>>() {
+		List<Usuario> t = gson.fromJson(json, new TypeToken<List<Usuario>>() {
 		}.getType());
 		return t;
 	}
 
-	public TabTransporte findColumnModel(String value) {
+	public Usuario findColumnModel(String value) {
 		Gson gson = new Gson();
 		Client c = Client.create();
 		// GET example
 		WebResource wr = c.resource(HOSTNAME + API + PATH + "findColumnName/" + value);
 		String json = wr.get(String.class);
 		gson = new GsonBuilder().registerTypeAdapter(Date.class, new DateDeserializer()).create();
-		TabTransporte t = gson.fromJson(json, new TypeToken<TabTransporte>() {
+		Usuario t = gson.fromJson(json, new TypeToken<Usuario>() {
 		}.getType());
 		return t;
 	}
 
-	public TabTransporte findId(String id) {
+	public Usuario findId(String id) {
 		Gson gson = new Gson();
 		Client c = Client.create();
 		// GET example
 		WebResource wr = c.resource(HOSTNAME + API + PATH + "findId/" + id);
 		String json = wr.get(String.class);
 		gson = new GsonBuilder().registerTypeAdapter(Date.class, new DateDeserializer()).create();
-		TabTransporte t = gson.fromJson(json, new TypeToken<TabTransporte>() {
+		Usuario t = gson.fromJson(json, new TypeToken<Usuario>() {
 		}.getType());
 		return t;
 	}
 
-	public void salvar(TabTransporte objeto) {
+	public void salvar(Usuario objeto) {
 		Gson gson = new Gson();
 		Client c = Client.create();
 		WebResource wr = c.resource(HOSTNAME + API + PATH + "salvar/").path("objeto");
@@ -71,7 +71,7 @@ public class UsuarioClient implements Serializable {
 				gson.toJson(objeto));
 	}
 	
-	public void atualizar(TabTransporte objeto) {
+	public void atualizar(Usuario objeto) {
 		Gson gson = new Gson();
 		Client c = Client.create();
 		WebResource wr = c.resource(HOSTNAME + API + PATH + "atualizar/").path("objeto");

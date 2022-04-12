@@ -18,7 +18,8 @@ public class TabOperacaoBO implements Serializable {
 		
 		/**
 		 * BO example, TabEmpresa class
-		 * */
+		 **/
+
 		public List<TabOperacao> listAll() throws Exception{
 			return tabOperacaoDAO.ListAll();
 		}

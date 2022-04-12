@@ -19,10 +19,10 @@ import br.com.portaria.domain.util.DateSerializer;
 public class TabEmpresaClient {
 
 	// URL http://localhost:8080/portaria-wrest/rest/tabemresaapi/listAll
-	private final String HOSTNAME = "http://localhost:8080/"; 
+	private final String HOSTNAME = "http://localhost:8080/";
 	private final String API = "portaria-wrest/rest/";
 	private final String PATH = "tabempresaapi/";
-	
+
 	public List<TabEmpresa> listAll() {
 		Gson gson = new Gson();
 		Client c = Client.create();
@@ -34,7 +34,7 @@ public class TabEmpresaClient {
 		}.getType());
 		return t;
 	}
-	
+
 	public TabEmpresa findColumnModel(String value) {
 		Gson gson = new Gson();
 		Client c = Client.create();
@@ -46,7 +46,7 @@ public class TabEmpresaClient {
 		}.getType());
 		return t;
 	}
-	
+
 	public TabEmpresa findId(String id) {
 		Gson gson = new Gson();
 		Client c = Client.create();
@@ -74,5 +74,5 @@ public class TabEmpresaClient {
 		String s = wr.accept(MediaType.APPLICATION_XML).delete(String.class);
 		return s;
 	}
-	
+
 }

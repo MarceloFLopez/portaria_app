@@ -4,10 +4,7 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 
-import br.com.portaria.domain.TabEmpresa;
-import br.com.portaria.domain.TabOperacao;
-import br.com.portaria.domain.TabPessoa;
-import br.com.portaria.domain.TabTransporte;
+import br.com.portaria.domain.Usuario;
 import br.com.portaria.persistence.util.CRUDUtil;
 import br.com.portaria.persistence.util.JPAUtil;
 
@@ -16,15 +13,21 @@ public class WTestaConexao {
 	public static void main(String[] args) throws Exception {
 		EntityManager em = JPAUtil.getEntityManager();
 
-		CRUDUtil<TabEmpresa> utile = new CRUDUtil<TabEmpresa>(em, TabEmpresa.class);
-		CRUDUtil<TabPessoa> utilp = new CRUDUtil<TabPessoa>(em, TabPessoa.class);
-		CRUDUtil<TabTransporte> utilt = new CRUDUtil<TabTransporte>(em, TabTransporte.class);
-		CRUDUtil<TabOperacao> utilo = new CRUDUtil<TabOperacao>(em, TabOperacao.class);
+//		CRUDUtil<TabEmpresa> utile = new CRUDUtil<TabEmpresa>(em, TabEmpresa.class);
+//		CRUDUtil<TabPessoa> utilp = new CRUDUtil<TabPessoa>(em, TabPessoa.class);
+//		CRUDUtil<TabTransporte> utilt = new CRUDUtil<TabTransporte>(em, TabTransporte.class);
+//		CRUDUtil<TabOperacao> utilo = new CRUDUtil<TabOperacao>(em, TabOperacao.class);
+		CRUDUtil<Usuario>util = new CRUDUtil<Usuario>(em, Usuario.class);
 
 		/// recupero uma lista do banco de dados
-		List<TabPessoa> list = utilp.listaTodos();
-		list.forEach(System.out::println);
+//		List<Usuario> list = util.listaTodos();
+//		list.forEach(System.out::println);
 		
+		Usuario u = new Usuario();
+		u.setAtivo(true);
+		u.setNome("MarceloLopez");
+		u.setSenha("1234");
+		util.adiciona(u);
 		
 //		list.forEach(System.out::println);
 
