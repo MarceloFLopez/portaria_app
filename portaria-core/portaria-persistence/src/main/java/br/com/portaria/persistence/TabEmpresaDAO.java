@@ -12,7 +12,7 @@ import javax.persistence.NoResultException;
 import br.com.portaria.domain.TabEmpresa;
 import br.com.portaria.persistence.util.CRUDUtil;
 
-@Named
+
 public class TabEmpresaDAO  implements Serializable {
 	private static final long serialVersionUID = 1L;
 

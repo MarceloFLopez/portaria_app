@@ -3,6 +3,7 @@ package br.com.portaria.wrest.client;
 import java.util.Date;
 import java.util.List;
 
+import javax.inject.Named;
 import javax.ws.rs.core.MediaType;
 
 import com.google.gson.Gson;
@@ -16,6 +17,7 @@ import br.com.portaria.domain.TabEmpresa;
 import br.com.portaria.domain.util.DateDeserializer;
 import br.com.portaria.domain.util.DateSerializer;
 
+@Named
 public class TabEmpresaClient {
 
 	// URL http://localhost:8080/portaria-wrest/rest/tabemresaapi/listAll
