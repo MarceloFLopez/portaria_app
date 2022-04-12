@@ -23,6 +23,8 @@ public class WTestaConexao {
 
 		/// recupero uma lista do banco de dados
 		List<TabPessoa> list = utilp.listaTodos();
+		list.forEach(System.out::println);
+		
 		
 //		list.forEach(System.out::println);
 

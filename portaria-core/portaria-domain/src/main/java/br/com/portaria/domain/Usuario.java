@@ -14,7 +14,7 @@ import javax.persistence.UniqueConstraint;
 @Entity
 @Table(uniqueConstraints = { @UniqueConstraint(columnNames = { "nome" }) })
 @NamedQueries({ @NamedQuery(name = "Usuarios.listAll", query = "SELECT t FROM Usuario t"),
-		@NamedQuery(name = "Usuarios.findColumnName", query = "SELECT t FROM Usuario t WHERE t.nome = :nome") })
+				@NamedQuery(name = "Usuarios.findColumnName", query = "SELECT t FROM Usuario t WHERE t.nome = :nome") })
 public class Usuario implements Serializable {
 	private static final long serialVersionUID = 1L;
 

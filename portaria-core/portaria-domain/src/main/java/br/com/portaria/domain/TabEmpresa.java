@@ -24,7 +24,7 @@ public class TabEmpresa implements Serializable {
 	private String cnpj;
 	private String name;
 
-	
+		
 	public TabEmpresa() {
 	}
 	public TabEmpresa( String cnpj, String name) {

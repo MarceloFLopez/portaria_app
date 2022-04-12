@@ -5,12 +5,14 @@ import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
+import javax.inject.Named;
 import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
 
 import br.com.portaria.domain.TabEmpresa;
 import br.com.portaria.persistence.util.CRUDUtil;
 
+@Named
 public class TabEmpresaDAO  implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -44,7 +46,7 @@ public class TabEmpresaDAO  implements Serializable {
 	public TabEmpresa findColumnName(String value) {
 		try {
 			return 
-			(TabEmpresa) em.createNamedQuery("TabEmpresa.findColumName").getSingleResult();
+			(TabEmpresa) em.createNamedQuery("TabEmpresa.findColumnName").getSingleResult();
 		} catch (NoResultException e) {
 			e.getStackTrace();
 			return null;

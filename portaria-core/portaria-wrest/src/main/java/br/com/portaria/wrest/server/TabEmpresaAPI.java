@@ -34,7 +34,7 @@ public class TabEmpresaAPI  {
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("findColumnName/{value}")
-	public TabEmpresa findColumnModel(@PathParam("value") String value ) throws Exception {
+	public TabEmpresa findColumnName(@PathParam("value") String value ) throws Exception {
 		return tabEmpresaBO.findColumnName(value);
 	}
 
