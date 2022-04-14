@@ -5,7 +5,6 @@ import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
-import javax.inject.Named;
 import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
 
@@ -19,7 +18,7 @@ public class TabEmpresaDAO  implements Serializable {
 	@Inject
 	EntityManager em;
 
-	private CRUDUtil<TabEmpresa> crudUtil = new CRUDUtil<TabEmpresa>(em, null);
+	private CRUDUtil<TabEmpresa> crudUtil = new CRUDUtil<TabEmpresa>(em, TabEmpresa.class);
 
 	@PostConstruct
 	void init() {

@@ -1,7 +1,5 @@
 package br.com.portaria.persistence;
 
-import java.util.List;
-
 import javax.persistence.EntityManager;
 
 import br.com.portaria.domain.Usuario;

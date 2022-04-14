@@ -1,8 +1,5 @@
 package br.com.portaria.wrest.util;
 
-import br.com.portaria.domain.TabTransporte;
-import br.com.portaria.wrest.client.TabTransporteClient;
-
 public class TesteTabTransporte {
 
 //	public static void main(String[] args) {
@@ -39,18 +36,18 @@ public class TesteTabTransporte {
 	
 	
 	//atualizar
-	public static void main(String[] args) {
-		TabTransporteClient client = new TabTransporteClient();
-		try {
-			//find id
-			TabTransporte t = client.findId("6");			
-			//atualizar
-			t.setModelo("TESTE 3");
-			t.setPlaca("abct-1234");
-			
-			client.salvar(t);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
+//	public static void main(String[] args) {
+//		TabTransporteClient client = new TabTransporteClient();
+//		try {
+//			//find id
+//			TabTransporte t = client.findId("6");			
+//			//atualizar
+//			t.setModelo("TESTE 3");
+//			t.setPlaca("abct-1234");
+//			
+//			client.salvar(t);
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
+//	}
 }

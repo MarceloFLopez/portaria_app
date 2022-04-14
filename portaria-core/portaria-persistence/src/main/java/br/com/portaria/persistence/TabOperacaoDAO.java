@@ -11,7 +11,7 @@ import javax.persistence.NoResultException;
 import br.com.portaria.domain.TabOperacao;
 import br.com.portaria.persistence.util.CRUDUtil;
 
-public class TabOperacaoDAO  implements Serializable {
+public class TabOperacaoDAO implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Inject
@@ -23,32 +23,31 @@ public class TabOperacaoDAO  implements Serializable {
 	void init() {
 		this.crudUtil = new CRUDUtil<TabOperacao>(this.em, TabOperacao.class);
 	}
-	
-	public CRUDUtil<TabOperacao> crudUtil(){
+
+	public CRUDUtil<TabOperacao> crudUtil() {
 		return crudUtil;
 	}
-	
+
 	/**
-	 *customization 
+	 * customization
 	 */
 	@SuppressWarnings("unchecked")
 	public List<TabOperacao> ListAll() {
 		try {
-			return 
-			(List<TabOperacao>) em.createNamedQuery("TabOperacao.listAll").getResultList();
+			return (List<TabOperacao>) em.createNamedQuery("TabOperacao.listAll").getResultList();
 		} catch (NoResultException e) {
 			e.getStackTrace();
 			return null;
 		}
 	}
+
 	public TabOperacao findColumnName(String value) {
 		try {
-			return 
-			(TabOperacao) em.createNamedQuery("TabOperacao.findColumName").getSingleResult();
+			return (TabOperacao) em.createNamedQuery("TabOperacao.findColumName").getSingleResult();
 		} catch (NoResultException e) {
 			e.getStackTrace();
 			return null;
 		}
 	}
-	
+
 }

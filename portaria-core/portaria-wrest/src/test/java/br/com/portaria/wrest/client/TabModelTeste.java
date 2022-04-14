@@ -1,7 +1,5 @@
 package br.com.portaria.wrest.client;
 
-import br.com.portaria.domain.TabEmpresa;
-
 public class TabModelTeste {
 
 	// listAll
@@ -63,17 +61,17 @@ public class TabModelTeste {
 //}
 
 	//Find and print itens
-	public static void main(String[] args) {
-		TabEmpresaClient client = new TabEmpresaClient();
-		TabEmpresa t = client.findColumnModel("Teste Empresa1");
-		
-		System.out.println(t);
-		try {
-			
-		} catch (Exception e1) {
-			e1.printStackTrace();
-		}
-	}
+//	public static void main(String[] args) {
+//		TabEmpresaClient client = new TabEmpresaClient();
+//		TabEmpresa t = client.findColumnModel("Teste Empresa1");
+//		
+//		System.out.println(t);
+//		try {
+//			
+//		} catch (Exception e1) {
+//			e1.printStackTrace();
+//		}
+//	}
 
 //salvar
 //	public static void main(String[] args) {

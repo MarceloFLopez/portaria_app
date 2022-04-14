@@ -25,7 +25,7 @@ public class TabPessoa implements Serializable {
 	private Long id;
 	private String name;
 	private String cpf;
-
+	
 	@ManyToOne
 	private TabEmpresa tabEmpresa;
 	@ManyToOne
