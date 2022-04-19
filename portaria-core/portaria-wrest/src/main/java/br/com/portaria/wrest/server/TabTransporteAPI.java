@@ -64,6 +64,7 @@ public class TabTransporteAPI {
 		System.out.println("Registro atualizado com sucesso!");
 	}
 
+	@GET
 	@DELETE
 	@Path("remover/{id}")
 	@Produces(MediaType.APPLICATION_XML)

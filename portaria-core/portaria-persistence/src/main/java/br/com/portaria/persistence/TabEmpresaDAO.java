@@ -45,7 +45,17 @@ public class TabEmpresaDAO  implements Serializable {
 	public TabEmpresa findColumnName(String value) {
 		try {
 			return 
-			(TabEmpresa) em.createNamedQuery("TabEmpresa.findColumnName").getSingleResult();
+			(TabEmpresa) em.createNamedQuery("TabEmpresa.findColumnName").setParameter("name", value).getSingleResult();
+		} catch (NoResultException e) {
+			e.getStackTrace();
+			return null;
+		}
+	}
+	
+	public TabEmpresa findColumnCnpj(String value) {
+		try {
+			return 
+			(TabEmpresa) em.createNamedQuery("TabEmpresa.findColumnCnpj").setParameter("cnpj", value).getSingleResult();
 		} catch (NoResultException e) {
 			e.getStackTrace();
 			return null;

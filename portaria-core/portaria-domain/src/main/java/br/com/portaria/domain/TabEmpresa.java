@@ -13,7 +13,8 @@ import javax.persistence.UniqueConstraint;
 @Entity
 @Table(uniqueConstraints = { @UniqueConstraint(columnNames = { "cnpj" }) })
 @NamedQueries({ @NamedQuery(name = "TabEmpresa.listAll", query = "SELECT t FROM TabEmpresa t"),
-	        	@NamedQuery(name = "TabEmpresa.findColumnName", query = "SELECT t FROM TabEmpresa t WHERE t.name = :name" ) })
+	        	@NamedQuery(name = "TabEmpresa.findColumnName", query = "SELECT t FROM TabEmpresa t WHERE t.name = :name" ),
+	        	@NamedQuery(name = "TabEmpresa.findColumnCnpj", query = "SELECT t FROM TabEmpresa t WHERE t.cnpj = :cnpj" )})
 public class TabEmpresa implements Serializable {
 
 	private static final long serialVersionUID = 1L;

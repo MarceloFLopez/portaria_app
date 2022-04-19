@@ -37,6 +37,13 @@ public class TabPessoaAPI  {
 	public TabPessoa findColumnModel(@PathParam("value") String value) throws Exception {
 		return tabPessoaBO.findColumnName(value);
 	}
+	
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	@Path("findColumnName/{value}")
+	public TabPessoa findColumnCpf(@PathParam("value") String value) throws Exception {
+		return tabPessoaBO.findColumnCpf(value);
+	}
 
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
@@ -54,6 +61,7 @@ public class TabPessoaAPI  {
 		System.out.println("Registro salvo com sucesso!");
 	}
 
+	@GET
 	@DELETE
 	@Path("remover/{id}")
 	@Produces(MediaType.APPLICATION_XML)

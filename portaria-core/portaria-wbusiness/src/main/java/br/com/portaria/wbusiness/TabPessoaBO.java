@@ -28,6 +28,9 @@ public class TabPessoaBO implements Serializable {
 		public TabPessoa findId(Long id) throws Exception{
 			return tabPessoaDAO.crudUtil().buscaPorId(id);
 		}
+		public TabPessoa findColumnCpf(String value) {
+			return tabPessoaDAO.findColumnCpf(value);
+		}
 		public void salvar(TabPessoa t) throws Exception{
 			// set to Uppercase
 			t.setName(t.getName().toUpperCase());

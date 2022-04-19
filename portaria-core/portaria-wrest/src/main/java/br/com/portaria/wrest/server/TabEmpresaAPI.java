@@ -15,6 +15,7 @@ import javax.ws.rs.core.MediaType;
 import br.com.portaria.domain.TabEmpresa;
 import br.com.portaria.wbusiness.TabEmpresaBO;
 
+
 @Path("tabempresaapi")
 public class TabEmpresaAPI  {
 
@@ -37,6 +38,14 @@ public class TabEmpresaAPI  {
 	public TabEmpresa findColumnName(@PathParam("value") String value ) throws Exception {
 		return tabEmpresaBO.findColumnName(value);
 	}
+	
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	@Path("findColumnCnpj/{value}")
+	public TabEmpresa findColumnCnpj(@PathParam("value") String value ) throws Exception {
+		return tabEmpresaBO.findColumnCnpj(value);
+	}
+
 
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
@@ -53,11 +62,12 @@ public class TabEmpresaAPI  {
 		tabEmpresaBO.salvar(t);
 	}
 
+	@GET
 	@DELETE
-	@Path("remover/{id}")
+	@Path("remove/{id}")
 	@Produces(MediaType.APPLICATION_XML)
-	public String remover(@PathParam("id") String id) throws Exception {
-		tabEmpresaBO.remover(tabEmpresaBO.findId(new Long(id)));
+	public String remove(@PathParam("id") String id) throws Exception {
+		tabEmpresaBO.remove(tabEmpresaBO.findId(new Long(id)));
 		return "Removido com sucesso!";
 	}
 

@@ -23,7 +23,7 @@ public class TabTransporteClient implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	// URL http://localhost:8080/portaria-wrest/rest/tabtransporteapi/findId/5
+	// URL http://localhost:8080/portaria-wrest/rest/tabtransporteapi/findId/1
 	private final String HOSTNAME = "http://localhost:8080/"; // teste
 	private final String API = "portaria-wrest/rest/";//
 	private final String PATH = "tabtransporteapi/";

@@ -20,7 +20,7 @@ import br.com.portaria.domain.util.DateSerializer;
 @Named
 public class TabEmpresaClient {
 
-	// URL http://localhost:8080/portaria-wrest/rest/tabempresaapi/listAll
+	// URL http://localhost:8080/portaria-wrest/rest/tabempresaapi/remove/3
 	private final String HOSTNAME = "http://localhost:8080/";
 	private final String API = "portaria-wrest/rest/";
 	private final String PATH = "tabempresaapi/";
@@ -37,7 +37,7 @@ public class TabEmpresaClient {
 		return t;
 	}
 
-	public TabEmpresa findColumnModel(String value) {
+	public TabEmpresa findColumnName(String value) {
 		Gson gson = new Gson();
 		Client c = Client.create();
 		// GET example
@@ -48,6 +48,19 @@ public class TabEmpresaClient {
 		}.getType());
 		return t;
 	}
+	
+	public TabEmpresa findColumnCnpj(String value) {
+		Gson gson = new Gson();
+		Client c = Client.create();
+		// GET example
+		WebResource wr = c.resource(HOSTNAME + API + PATH + "findColumnCnpj/" + value);
+		String json = wr.get(String.class);
+		gson = new GsonBuilder().registerTypeAdapter(Date.class, new DateDeserializer()).create();
+		TabEmpresa t = gson.fromJson(json, new TypeToken<TabEmpresa>() {
+		}.getType());
+		return t;
+	}
+
 
 	public TabEmpresa findId(String id) {
 		Gson gson = new Gson();
@@ -70,9 +83,9 @@ public class TabEmpresaClient {
 				gson.toJson(objeto));
 	}
 
-	public String remover(String id) throws Exception {
+	public String remove(String id) throws Exception {
 		Client c = Client.create();
-		WebResource wr = c.resource(HOSTNAME + API + PATH + "remover/" + id);
+		WebResource wr = c.resource(HOSTNAME + API + PATH + "remove/" + id);
 		String s = wr.accept(MediaType.APPLICATION_XML).delete(String.class);
 		return s;
 	}

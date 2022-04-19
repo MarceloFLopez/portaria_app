@@ -1,13 +1,15 @@
 package br.com.portaria.wrest.util;
 
+import br.com.portaria.wrest.client.TabTransporteClient;
+
 public class TesteTabTransporte {
 
-//	public static void main(String[] args) {
-//		TabTransporteClient  client = new TabTransporteClient();
-//		client.listAll().forEach(a ->{
-//			System.out.println(a.toString());
-//		});
-//	}
+	public static void main(String[] args) {
+		TabTransporteClient  client = new TabTransporteClient();
+		client.listAll().forEach(a ->{
+			System.out.println(a.toString());
+		});
+	}
 	
 	//remover
 //	public static void main(String[] args) {

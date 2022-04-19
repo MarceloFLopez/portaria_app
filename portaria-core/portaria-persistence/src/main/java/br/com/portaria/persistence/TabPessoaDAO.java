@@ -51,4 +51,14 @@ public class TabPessoaDAO  implements Serializable {
 		}
 	}
 	
+	public TabPessoa findColumnCpf(String value) {
+		try {
+			return 
+			(TabPessoa) em.createNamedQuery("TabPessoa.findColumnCpf").getSingleResult();
+		} catch (NoResultException e) {
+			e.getStackTrace();
+			return null;
+		}
+	}
+	
 }

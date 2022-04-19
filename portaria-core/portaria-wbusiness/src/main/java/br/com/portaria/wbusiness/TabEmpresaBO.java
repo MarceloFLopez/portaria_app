@@ -25,6 +25,9 @@ public class TabEmpresaBO implements Serializable {
 		public TabEmpresa findColumnName(String value) {
 			return tabEmpresaDAO.findColumnName(value);
 		}
+		public TabEmpresa findColumnCnpj(String value) {
+			return tabEmpresaDAO.findColumnCnpj(value);
+		}
 		public TabEmpresa findId(Long id) throws Exception{
 			return tabEmpresaDAO.crudUtil().buscaPorId(id);
 		}
@@ -38,7 +41,7 @@ public class TabEmpresaBO implements Serializable {
 				tabEmpresaDAO.crudUtil().atualiza(t);
 			}
 		}
-		public void remover(TabEmpresa t) throws Exception{
+		public void remove(TabEmpresa t) throws Exception{
 			tabEmpresaDAO.crudUtil().remove(t);
 		}	
 		

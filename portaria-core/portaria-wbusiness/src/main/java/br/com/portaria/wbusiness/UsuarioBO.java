@@ -38,7 +38,7 @@ public class UsuarioBO implements Serializable {
 				usuarioDAO.crudUtil().atualiza(t);
 			}
 		}
-		public void remover(Usuario t) throws Exception{
+		public void remove(Usuario t) throws Exception{
 			usuarioDAO.crudUtil().remove(t);
 		}	
 		

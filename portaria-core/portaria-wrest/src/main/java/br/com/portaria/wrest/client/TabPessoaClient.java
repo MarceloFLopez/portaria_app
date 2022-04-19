@@ -22,7 +22,7 @@ import br.com.portaria.domain.util.DateSerializer;
 public class TabPessoaClient implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
-	// URL http://localhost:8080/portaria-wrest/rest/tabpessoaapi/findId/5
+	// URL http://localhost:8080/portaria-wrest/rest/tabpessoaapi/findColumnName/
 	private final String HOSTNAME = "http://localhost:8080/"; // teste
 	private final String API = "portaria-wrest/rest/";//
 	private final String PATH = "tabpessoaapi/";
@@ -44,6 +44,18 @@ public class TabPessoaClient implements Serializable {
 		Client c = Client.create();
 		// GET example
 		WebResource wr = c.resource(HOSTNAME + API + PATH + "findColumnName/" + value);
+		String json = wr.get(String.class);
+		gson = new GsonBuilder().registerTypeAdapter(Date.class, new DateDeserializer()).create();
+		TabPessoa t = gson.fromJson(json, new TypeToken<TabPessoa>() {
+		}.getType());
+		return t;
+	}
+	
+	public TabPessoa findColumnCpf(String value) {
+		Gson gson = new Gson();
+		Client c = Client.create();
+		// GET example
+		WebResource wr = c.resource(HOSTNAME + API + PATH + "findColumnCpf/" + value);
 		String json = wr.get(String.class);
 		gson = new GsonBuilder().registerTypeAdapter(Date.class, new DateDeserializer()).create();
 		TabPessoa t = gson.fromJson(json, new TypeToken<TabPessoa>() {
