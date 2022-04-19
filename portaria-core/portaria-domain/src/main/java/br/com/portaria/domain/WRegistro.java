@@ -1,6 +1,7 @@
 package br.com.portaria.domain;
 
 import java.io.Serializable;
+import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -8,27 +9,33 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
-import javax.persistence.Table;
-import javax.persistence.UniqueConstraint;
+import javax.persistence.OneToOne;
 
 @Entity
-@Table(uniqueConstraints = { @UniqueConstraint(columnNames = { "cpf" }) })
-@NamedQueries({ @NamedQuery(name = "TabPessoa.listAll", query = "SELECT t FROM TabPessoa t"),
-				@NamedQuery(name = "TabPessoa.findColumName", query = "SELECT t FROM TabPessoa t WHERE t.name = :name"),
-				@NamedQuery(name = "TabPessoa.findColumnCpf", query = "SELECT t FROM TabPessoa t WHERE t.cpf = :cpf"),
-})
-public class TabPessoa implements Serializable {
+@NamedQueries({ @NamedQuery(name = "wRegistro.listAll", query = "SELECT t FROM WRegistro t") })
+public class WRegistro implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	private String name;
-	private String cpf;
-	
-	public TabPessoa() {
-		
+	private Date date;
+
+	@OneToOne
+	private Usuario usuario;
+	@OneToOne
+	private TabPessoa pessoa;
+
+	public WRegistro() {
+
+	}
+
+	public WRegistro(Long id, Date date, Usuario usuario, TabPessoa pessoa) {
+		this.id = id;
+		this.date = date;
+		this.usuario = usuario;
+		this.pessoa = pessoa;
 	}
 
 	public Long getId() {
@@ -39,20 +46,28 @@ public class TabPessoa implements Serializable {
 		this.id = id;
 	}
 
-	public String getName() {
-		return name;
+	public Date getDate() {
+		return date;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setDate(Date date) {
+		this.date = date;
 	}
 
-	public String getCpf() {
-		return cpf;
+	public Usuario getUsuario() {
+		return usuario;
 	}
 
-	public void setCpf(String cpf) {
-		this.cpf = cpf;
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
+
+	public TabPessoa getPessoa() {
+		return pessoa;
+	}
+
+	public void setPessoa(TabPessoa pessoa) {
+		this.pessoa = pessoa;
 	}
 
 	@Override
@@ -71,7 +86,7 @@ public class TabPessoa implements Serializable {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		TabPessoa other = (TabPessoa) obj;
+		WRegistro other = (WRegistro) obj;
 		if (id == null) {
 			if (other.id != null)
 				return false;
@@ -82,7 +97,8 @@ public class TabPessoa implements Serializable {
 
 	@Override
 	public String toString() {
-		return "TabPessoa [id=" + id + ", name=" + name + ", cpf=" + cpf + "]";
+		return "WRegistro [id=" + id + ", date=" + date + ", usuario=" + usuario + ", pessoa=" + pessoa + "]";
 	}
+
 
 }
