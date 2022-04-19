@@ -8,11 +8,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
-import javax.persistence.Table;
-import javax.persistence.UniqueConstraint;
 
 @Entity
-@Table(uniqueConstraints = { @UniqueConstraint(columnNames = { "nome" }) })
 @NamedQueries({ @NamedQuery(name = "Usuario.listAll", query = "SELECT t FROM Usuario t"),
 				@NamedQuery(name = "Usuario.findColumnName", query = "SELECT t FROM Usuario t WHERE t.nome = :nome") })
 public class Usuario implements Serializable {

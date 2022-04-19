@@ -6,17 +6,17 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 
 @Entity
-@Table(uniqueConstraints = { @UniqueConstraint(columnNames = { "cpf" }) })
+@Table(uniqueConstraints = { @UniqueConstraint(columnNames = { "cpf"}) })
 @NamedQueries({ @NamedQuery(name = "TabPessoa.listAll", query = "SELECT t FROM TabPessoa t"),
-				@NamedQuery(name = "TabPessoa.findColumName", query = "SELECT t FROM TabPessoa t WHERE t.name = :name"),
-				@NamedQuery(name = "TabPessoa.findColumnCpf", query = "SELECT t FROM TabPessoa t WHERE t.cpf = :cpf"),
-})
+		@NamedQuery(name = "TabPessoa.findColumName", query = "SELECT t FROM TabPessoa t WHERE t.name = :name"),
+		@NamedQuery(name = "TabPessoa.findColumnCpf", query = "SELECT t FROM TabPessoa t WHERE t.cpf = :cpf"), })
 public class TabPessoa implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -26,9 +26,40 @@ public class TabPessoa implements Serializable {
 	private Long id;
 	private String name;
 	private String cpf;
-	
+
+	@ManyToOne
+	private TabEmpresa empresa;
+	@ManyToOne
+	private TabOperacao operacao;
+	@ManyToOne
+	private TabTransporte transporte;
+
 	public TabPessoa() {
-		
+
+	}
+
+	public TabEmpresa getEmpresa() {
+		return empresa;
+	}
+
+	public void setEmpresa(TabEmpresa empresa) {
+		this.empresa = empresa;
+	}
+
+	public TabOperacao getOperacao() {
+		return operacao;
+	}
+
+	public void setOperacao(TabOperacao operacao) {
+		this.operacao = operacao;
+	}
+
+	public TabTransporte getTransporte() {
+		return transporte;
+	}
+
+	public void setTransporte(TabTransporte transporte) {
+		this.transporte = transporte;
 	}
 
 	public Long getId() {
@@ -82,7 +113,8 @@ public class TabPessoa implements Serializable {
 
 	@Override
 	public String toString() {
-		return "TabPessoa [id=" + id + ", name=" + name + ", cpf=" + cpf + "]";
+		return "TabPessoa [id=" + id + ", name=" + name + ", cpf=" + cpf + ", empresa=" + empresa + ", operacao="
+				+ operacao + ", transporte=" + transporte + "]";
 	}
 
 }

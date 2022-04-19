@@ -1,10 +1,10 @@
 package br.com.portaria.wrest.client;
 
-public class TabTesteUsuario {
+public class TesteRegistro {
 
 	// Listar
 	public static void main(String[] args) {
-		WRegistroClient client = new WRegistroClient();
+		UsuarioClient client = new UsuarioClient();
 		client.listAll().forEach(a ->{
 			System.out.println(a.toString());
 		});

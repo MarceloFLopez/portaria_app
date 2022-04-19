@@ -1,6 +1,6 @@
 package br.com.portaria.persistence;
 
-import java.util.Date;
+import java.util.Scanner;
 
 import javax.persistence.EntityManager;
 
@@ -9,6 +9,7 @@ import br.com.portaria.domain.TabOperacao;
 import br.com.portaria.domain.TabPessoa;
 import br.com.portaria.domain.TabTransporte;
 import br.com.portaria.domain.Usuario;
+import br.com.portaria.domain.WRegistro;
 import br.com.portaria.persistence.util.CRUDUtil;
 import br.com.portaria.persistence.util.JPAUtil;
 
@@ -22,59 +23,84 @@ public class WTestaConexao {
 		CRUDUtil<TabTransporte> utilt = new CRUDUtil<TabTransporte>(em, TabTransporte.class);
 		CRUDUtil<TabOperacao> utilo = new CRUDUtil<TabOperacao>(em, TabOperacao.class);
 		CRUDUtil<Usuario>util = new CRUDUtil<Usuario>(em, Usuario.class);
+		CRUDUtil<WRegistro>utilr = new CRUDUtil<WRegistro>(em, WRegistro.class);
 
 		/// recupero uma lista do banco de dados
-//		List<Usuario> list = util.listaTodos();
+//		List<WRegistro> list = utilr.listaTodos();
 //		list.forEach(System.out::println);
 		
-//		Usuario u = new Usuario();
-//		u.setAtivo(true);
-//		u.setNome("MarceloLopez");
-//		u.setSenha("1234");
-//		util.adiciona(u);
+
 		
 //		list.forEach(System.out::println);
 
 //		TabEmpresa e = new TabEmpresa();
-//		e = utile.buscaPorId((long) 3);
+//		e = utile.buscaPorId((long) 2);
 //		System.out.println(e);
 
 		// Adicionar/Salvar
 //		TabEmpresa e = new TabEmpresa();		
-//		e.setCnpj("45.950.626/0001-01");
-//		e.setName("Teste Empresa3");		
+//		e = utile.buscaPorId((long)1);		
 //		utile.adiciona(e);		
 //		
 //		TabTransporte t = new TabTransporte();
-//		t.setModelo("Caminhão");
-//		t.setPlaca("xxxx-1235");
+//		t = utilt.buscaPorId((long)1);
 //		utilt.adiciona(t);
 //		
 //		TabOperacao o = new TabOperacao();
-//		o.setName("Coleta");
-//		o.setData(new Date());
-//		utilo.adiciona(o);
+//		o = utilo.buscaPorId((long)2);
+//		utilo.atualiza(o);
 //
 //		TabPessoa p = new TabPessoa();
-//		p.setCpf("969.454.890-01");
+//		p.setCpf("96945489001");
 //		p.setName("Teste nome");
-//		p.setTabEmpresa(e);
-//		p.setTabOperacao(o);
+//		p.setEmpresa(e);
+//		p.setOperacao(o);
 //		p.setTransporte(t);
+//
 //		utilp.adiciona(p);
-		
+//		
 //		Usuario u = new Usuario();
-//		u.setAtivo(true);
-//		u.setNome("Teste");
-//		u.setSenha("xxxxxx");
+//		u.setAtivo(false);
+//		u.setNome("teste2");
+//		u.setSenha("1234");
 //		util.adiciona(u);
+//		
+//		WRegistro wr = new WRegistro();
+//		wr.setDate(new Date());
+//		wr.setPessoa(p);
+//		wr.setUsuario(u);
+//		utilr.adiciona(wr);
+		
 
 		// BUSCAR
-//		System.out.println("Insira o ID para buscar: ");
-//		Long id = sc.nextLong();
-//		TabEmpresa p = new TabEmpresa();
-//		p = utile.buscaPorId(id);
-//		System.out.println(p);
+		System.out.println("Insira o ID para buscar: ");
+		Scanner sc = new Scanner(System.in);
+		Long id = sc.nextLong();
+		TabEmpresa p1 = new TabEmpresa();
+		p1 = utile.buscaPorId(id);
+		System.out.println(p1);
+		
+		
+		Long id1 = sc.nextLong();
+		TabPessoa p = new TabPessoa();
+		p = utilp.buscaPorId(id1);
+		System.out.println(p);
+		
+		Long id2 = sc.nextLong();
+		TabPessoa p2 = new TabPessoa();
+		p = utilp.buscaPorId(id2);
+		System.out.println(p);
+		
+		Long id3 = sc.nextLong();
+		TabTransporte p3 = new TabTransporte();
+		p3 = utilt.buscaPorId(id3);
+		System.out.println(p3);
+		
+		Long id4 = sc.nextLong();
+		TabOperacao p4 = new TabOperacao();
+		p4 = utilo.buscaPorId(id4);
+		System.out.println(p4);
+		
 		
 		// Remove
 		

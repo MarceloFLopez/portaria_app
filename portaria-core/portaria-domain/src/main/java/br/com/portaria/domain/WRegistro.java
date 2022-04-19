@@ -7,12 +7,12 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
-import javax.persistence.OneToOne;
 
 @Entity
-@NamedQueries({ @NamedQuery(name = "wRegistro.listAll", query = "SELECT t FROM WRegistro t") })
+@NamedQueries({ @NamedQuery(name = "WRegistro.listAll", query = "SELECT t FROM WRegistro t") })
 public class WRegistro implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -22,9 +22,9 @@ public class WRegistro implements Serializable {
 	private Long id;
 	private Date date;
 
-	@OneToOne
+	@ManyToOne
 	private Usuario usuario;
-	@OneToOne
+	@ManyToOne
 	private TabPessoa pessoa;
 
 	public WRegistro() {

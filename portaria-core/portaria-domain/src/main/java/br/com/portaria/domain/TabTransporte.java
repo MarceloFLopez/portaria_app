@@ -11,7 +11,7 @@ import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 @Entity
-@Table(uniqueConstraints = { @UniqueConstraint(columnNames = { "placa" }) })
+@Table(uniqueConstraints = { @UniqueConstraint(columnNames = { "placa"}) })
 @NamedQueries({ @NamedQuery(name = "TabTransporte.listAll", query = "SELECT t FROM TabTransporte t"),
 				@NamedQuery(name = "TabTransporte.findColumName", query = "SELECT t FROM TabTransporte t WHERE t.placa = :placa") })
 public class TabTransporte implements Serializable {

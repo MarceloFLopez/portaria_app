@@ -24,10 +24,10 @@ public class WRegistroClient implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	// URL http://localhost:8080/portaria-wrest/rest/tabtransporteapi/findId/5
+	// URL http://localhost:8080/portaria-wrest/rest/registroapi/listAll
 	private final String HOSTNAME = "http://localhost:8080/"; // teste
 	private final String API = "portaria-wrest/rest/";//
-	private final String PATH = "usuarioapi/";
+	private final String PATH = "registroapi/";
 	
 	public List<WRegistro> listAll() {
 		Gson gson = new Gson();

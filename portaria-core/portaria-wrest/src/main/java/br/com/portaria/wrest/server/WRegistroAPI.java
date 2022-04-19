@@ -12,12 +12,10 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
-import br.com.portaria.domain.Usuario;
 import br.com.portaria.domain.WRegistro;
-import br.com.portaria.wbusiness.UsuarioBO;
 import br.com.portaria.wbusiness.WRegistroBO;
 
-@Path("usuarioapi")
+@Path("registroapi")
 public class WRegistroAPI {
 	
 	@Inject
