@@ -3,12 +3,12 @@ package br.com.portaria.wrest.client;
 public class TesteRegistro {
 
 	// Listar
-	public static void main(String[] args) {
-		UsuarioClient client = new UsuarioClient();
-		client.listAll().forEach(a ->{
-			System.out.println(a.toString());
-		});
-	}
+//	public static void main(String[] args) {
+//		WRegistroClient client = new WRegistroClient();
+//		client.listAll().forEach(a ->{
+//			System.out.println(a.toString());
+//		});
+//	}
 
 	// remover
 //	public static void main(String[] args) {
@@ -19,11 +19,11 @@ public class TesteRegistro {
 //		e.printStackTrace();
 //	}
 //}
-
-//salvar
+	
+	
+	//salvar
 //	public static void main(String[] args) {
 //		UsuarioClient client = new UsuarioClient();
-//		
 //		try {
 //			Usuario t = new Usuario();
 //			t.setAtivo(false);
@@ -35,8 +35,10 @@ public class TesteRegistro {
 //			e.printStackTrace();
 //		}
 //	}
+	
+	
 
-//atualizar
+	//atualizar
 //	public static void main(String[] args) {
 //		UsuarioClient client = new UsuarioClient();
 //		try {

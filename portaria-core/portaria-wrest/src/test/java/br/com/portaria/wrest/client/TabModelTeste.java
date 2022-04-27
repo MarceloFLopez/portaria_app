@@ -4,12 +4,12 @@ public class TabModelTeste {
 
 	// listAll
 	// Empresa
-//	public static void main(String[] args) {
-//		TabEmpresaClient client = new TabEmpresaClient();
-//		client.listAll().forEach(a ->{
-//			System.out.println(a.toString());
-//		});
-//	}
+	public static void main(String[] args) {
+		TabEmpresaClient client = new TabEmpresaClient();
+		client.listAll().forEach(a ->{
+			System.out.println(a.toString());
+		});
+	}
 
 	// Pessoa
 //	public static void main(String[] args) {

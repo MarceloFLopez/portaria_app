@@ -1,6 +1,6 @@
 package br.com.portaria.persistence;
 
-import java.util.Scanner;
+import java.util.Date;
 
 import javax.persistence.EntityManager;
 
@@ -38,69 +38,63 @@ public class WTestaConexao {
 //		System.out.println(e);
 
 		// Adicionar/Salvar
-//		TabEmpresa e = new TabEmpresa();		
-//		e = utile.buscaPorId((long)1);		
-//		utile.adiciona(e);		
-//		
-//		TabTransporte t = new TabTransporte();
-//		t = utilt.buscaPorId((long)1);
-//		utilt.adiciona(t);
-//		
-//		TabOperacao o = new TabOperacao();
-//		o = utilo.buscaPorId((long)2);
-//		utilo.atualiza(o);
-//
-//		TabPessoa p = new TabPessoa();
-//		p.setCpf("96945489001");
-//		p.setName("Teste nome");
-//		p.setEmpresa(e);
-//		p.setOperacao(o);
-//		p.setTransporte(t);
-//
-//		utilp.adiciona(p);
-//		
-//		Usuario u = new Usuario();
-//		u.setAtivo(false);
-//		u.setNome("teste2");
-//		u.setSenha("1234");
-//		util.adiciona(u);
-//		
-//		WRegistro wr = new WRegistro();
-//		wr.setDate(new Date());
-//		wr.setPessoa(p);
-//		wr.setUsuario(u);
-//		utilr.adiciona(wr);
+		TabEmpresa e = new TabEmpresa();		
+		e = utile.buscaPorId((long)2);		
+		utile.adiciona(e);		
+		
+		TabTransporte t = new TabTransporte();
+		t = utilt.buscaPorId((long)2);
+		utilt.adiciona(t);
+		
+		TabOperacao o = new TabOperacao();
+		o = utilo.buscaPorId((long)2);
+		utilo.atualiza(o);
+
+		TabPessoa p = new TabPessoa();
+		p.setCpf("96945489003");
+		p.setName("Teste nome 3");
+		p.setEmpresa(e);
+		p.setOperacao(o);
+		p.setTransporte(t);
+
+		utilp.adiciona(p);
+		
+		Usuario u = new Usuario();
+		u.setAtivo(false);
+		u.setNome("teste2");
+		u.setSenha("12345");
+		u.setAtivo(false);
+		util.adiciona(u);
+		
+		WRegistro wr = new WRegistro();
+		wr.setDate(new Date());
+		wr.setPessoa(p);
+		wr.setUsuario(u);
+		utilr.adiciona(wr);
 		
 
 		// BUSCAR
-		System.out.println("Insira o ID para buscar: ");
-		Scanner sc = new Scanner(System.in);
-		Long id = sc.nextLong();
-		TabEmpresa p1 = new TabEmpresa();
-		p1 = utile.buscaPorId(id);
-		System.out.println(p1);
-		
-		
-		Long id1 = sc.nextLong();
-		TabPessoa p = new TabPessoa();
-		p = utilp.buscaPorId(id1);
-		System.out.println(p);
-		
-		Long id2 = sc.nextLong();
-		TabPessoa p2 = new TabPessoa();
-		p = utilp.buscaPorId(id2);
-		System.out.println(p);
-		
-		Long id3 = sc.nextLong();
-		TabTransporte p3 = new TabTransporte();
-		p3 = utilt.buscaPorId(id3);
-		System.out.println(p3);
-		
-		Long id4 = sc.nextLong();
-		TabOperacao p4 = new TabOperacao();
-		p4 = utilo.buscaPorId(id4);
-		System.out.println(p4);
-		
+//		System.out.println("Insira o ID para buscar: ");
+//		Scanner sc = new Scanner(System.in);
+//		Long id = sc.nextLong();
+//		TabEmpresa p1 = new TabEmpresa();
+//		p1 = utile.buscaPorId(id);
+//		System.out.println(p1);
+//	
+//		Long id2 = sc.nextLong();
+//		TabPessoa p2 = new TabPessoa();
+//		p2 = utilp.buscaPorId(id2);
+//		System.out.println(p2);
+//		
+//		Long id3 = sc.nextLong();
+//		TabTransporte p3 = new TabTransporte();
+//		p3 = utilt.buscaPorId(id3);
+//		System.out.println(p3);
+//		
+//		Long id4 = sc.nextLong();
+//		TabOperacao p4 = new TabOperacao();
+//		p4 = utilo.buscaPorId(id4);
+//		System.out.println(p4);
 		
 		// Remove
 		
@@ -121,7 +115,6 @@ public class WTestaConexao {
 //		p.setName("Marcelo");
 //		utilp.atualiza(p);
 //		System.out.println(p);
-		
 		
 	}
 

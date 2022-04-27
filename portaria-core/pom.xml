@@ -17,5 +17,6 @@
     <module>portaria-persistence</module>
     <module>portaria-wbusiness</module>
     <module>portaria-wrest</module>
+    <module>portaria-web</module>
   </modules>
 </project>

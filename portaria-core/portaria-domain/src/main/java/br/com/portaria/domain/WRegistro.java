@@ -24,6 +24,7 @@ public class WRegistro implements Serializable {
 
 	@ManyToOne
 	private Usuario usuario;
+	
 	@ManyToOne
 	private TabPessoa pessoa;
 
