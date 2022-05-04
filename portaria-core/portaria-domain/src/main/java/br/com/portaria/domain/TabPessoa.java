@@ -13,7 +13,7 @@ import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 
 @Entity
-@Table(uniqueConstraints = { @UniqueConstraint(columnNames = { "cpf"}) })
+@Table(uniqueConstraints = { @UniqueConstraint(columnNames = { "cpf" }) })
 @NamedQueries({ @NamedQuery(name = "TabPessoa.listAll", query = "SELECT t FROM TabPessoa t"),
 		@NamedQuery(name = "TabPessoa.findColumName", query = "SELECT t FROM TabPessoa t WHERE t.name = :name"),
 		@NamedQuery(name = "TabPessoa.findColumnCpf", query = "SELECT t FROM TabPessoa t WHERE t.cpf = :cpf"), })
@@ -29,13 +29,25 @@ public class TabPessoa implements Serializable {
 
 	@ManyToOne
 	private TabEmpresa empresa;
+
 	@ManyToOne
 	private TabOperacao operacao;
+
 	@ManyToOne
 	private TabTransporte transporte;
 
 	public TabPessoa() {
 
+	}
+
+	public TabPessoa(Long id, String name, String cpf, TabEmpresa empresa, TabOperacao operacao,
+			TabTransporte transporte) {
+		this.id = id;
+		this.name = name;
+		this.cpf = cpf;
+		this.empresa = empresa;
+		this.operacao = operacao;
+		this.transporte = transporte;
 	}
 
 	public TabEmpresa getEmpresa() {

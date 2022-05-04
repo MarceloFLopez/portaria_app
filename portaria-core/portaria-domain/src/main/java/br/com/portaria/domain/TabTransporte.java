@@ -10,10 +10,11 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
+
 @Entity
-@Table(uniqueConstraints = { @UniqueConstraint(columnNames = { "placa"}) })
+@Table(uniqueConstraints = { @UniqueConstraint(columnNames = { "placa" }) })
 @NamedQueries({ @NamedQuery(name = "TabTransporte.listAll", query = "SELECT t FROM TabTransporte t"),
-				@NamedQuery(name = "TabTransporte.findColumName", query = "SELECT t FROM TabTransporte t WHERE t.placa = :placa") })
+		@NamedQuery(name = "TabTransporte.findColumName", query = "SELECT t FROM TabTransporte t WHERE t.placa = :placa") })
 public class TabTransporte implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -22,23 +23,37 @@ public class TabTransporte implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String modelo;
-	private String placa;	
+	private String placa;
+
+	public TabTransporte() {
+	}
+
+	public TabTransporte(Long id, String modelo, String placa) {
+		this.id = id;
+		this.modelo = modelo;
+		this.placa = placa;
+	}
 
 	public Long getId() {
 		return id;
 	}
+
 	public void setId(Long id) {
 		this.id = id;
 	}
+
 	public String getModelo() {
 		return modelo;
 	}
+
 	public void setModelo(String modelo) {
 		this.modelo = modelo;
 	}
+
 	public String getPlaca() {
 		return placa;
 	}
+
 	public void setPlaca(String placa) {
 		this.placa = placa;
 	}
@@ -50,6 +65,7 @@ public class TabTransporte implements Serializable {
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		return result;
 	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -66,12 +82,10 @@ public class TabTransporte implements Serializable {
 			return false;
 		return true;
 	}
+
 	@Override
 	public String toString() {
 		return "TabTransporte [id=" + id + ", modelo=" + modelo + ", placa=" + placa + "]";
 	}
-	
 
-
-	
 }

@@ -12,8 +12,8 @@ import javax.persistence.NamedQuery;
 
 @Entity
 @NamedQueries({ @NamedQuery(name = "TabOperacao.listAll", query = "SELECT t FROM TabOperacao t"),
-				@NamedQuery(name = "TabOperacao.findColumName", query = "SELECT t FROM TabOperacao t WHERE t.name = :name") })
-public class TabOperacao implements Serializable{
+		@NamedQuery(name = "TabOperacao.findColumName", query = "SELECT t FROM TabOperacao t WHERE t.name = :name") })
+public class TabOperacao implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	@Id
@@ -22,6 +22,14 @@ public class TabOperacao implements Serializable{
 	private String name;
 	private Date data;
 
+	public TabOperacao(Long id, String name, Date data) {
+		this.id = id;
+		this.name = name;
+		this.data = data;
+	}
+
+	public TabOperacao() {
+	}
 
 	public Long getId() {
 		return id;
@@ -74,7 +82,7 @@ public class TabOperacao implements Serializable{
 
 	@Override
 	public String toString() {
-		return "TabOperacao [id=" + id + ", name=" + name + ", data=" + data +  "]";
+		return "TabOperacao [id=" + id + ", name=" + name + ", data=" + data + "]";
 	}
 
 }

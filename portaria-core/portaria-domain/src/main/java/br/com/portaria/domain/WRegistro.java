@@ -24,7 +24,7 @@ public class WRegistro implements Serializable {
 
 	@ManyToOne
 	private Usuario usuario;
-	
+
 	@ManyToOne
 	private TabPessoa pessoa;
 
@@ -33,6 +33,7 @@ public class WRegistro implements Serializable {
 	}
 
 	public WRegistro(Long id, Date date, Usuario usuario, TabPessoa pessoa) {
+		super();
 		this.id = id;
 		this.date = date;
 		this.usuario = usuario;
@@ -53,14 +54,6 @@ public class WRegistro implements Serializable {
 
 	public void setDate(Date date) {
 		this.date = date;
-	}
-
-	public Usuario getUsuario() {
-		return usuario;
-	}
-
-	public void setUsuario(Usuario usuario) {
-		this.usuario = usuario;
 	}
 
 	public TabPessoa getPessoa() {
@@ -100,6 +93,5 @@ public class WRegistro implements Serializable {
 	public String toString() {
 		return "WRegistro [id=" + id + ", date=" + date + ", usuario=" + usuario + ", pessoa=" + pessoa + "]";
 	}
-
 
 }

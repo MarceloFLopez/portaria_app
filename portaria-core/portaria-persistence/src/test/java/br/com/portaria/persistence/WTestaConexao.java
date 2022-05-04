@@ -38,40 +38,33 @@ public class WTestaConexao {
 //		System.out.println(e);
 
 		// Adicionar/Salvar
-		TabEmpresa e = new TabEmpresa();		
-		e = utile.buscaPorId((long)2);		
-		utile.adiciona(e);		
+	
+		TabEmpresa te = new TabEmpresa();
+		te = utile.buscaPorId(1l);		
+//		utile.adiciona(te);
 		
-		TabTransporte t = new TabTransporte();
-		t = utilt.buscaPorId((long)2);
-		utilt.adiciona(t);
+		TabOperacao to = new TabOperacao();
+		to = utilo.buscaPorId(2l);
+//		utilo.adiciona(to);
 		
-		TabOperacao o = new TabOperacao();
-		o = utilo.buscaPorId((long)2);
-		utilo.atualiza(o);
-
-		TabPessoa p = new TabPessoa();
-		p.setCpf("96945489003");
-		p.setName("Teste nome 3");
-		p.setEmpresa(e);
-		p.setOperacao(o);
-		p.setTransporte(t);
-
-		utilp.adiciona(p);
+		TabTransporte tt = new TabTransporte();
+		tt = utilt.buscaPorId(2l);
+//		utilt.adiciona(tt);
+		
+		TabPessoa tp = new TabPessoa();
+//		utilp.adiciona(tp);
+		tp = utilp.buscaPorId(1l);
 		
 		Usuario u = new Usuario();
-		u.setAtivo(false);
-		u.setNome("teste2");
-		u.setSenha("12345");
-		u.setAtivo(false);
+		u.setAtivo(true);
+		u.setNome("User 3");
+		u.setSenha("dddd");
 		util.adiciona(u);
 		
-		WRegistro wr = new WRegistro();
-		wr.setDate(new Date());
-		wr.setPessoa(p);
-		wr.setUsuario(u);
-		utilr.adiciona(wr);
+		WRegistro r = new WRegistro(null, new Date(), u, tp);
+		utilr.adiciona(r);
 		
+		System.out.println(r);
 
 		// BUSCAR
 //		System.out.println("Insira o ID para buscar: ");

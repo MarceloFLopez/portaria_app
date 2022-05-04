@@ -11,7 +11,7 @@ import javax.persistence.NamedQuery;
 
 @Entity
 @NamedQueries({ @NamedQuery(name = "Usuario.listAll", query = "SELECT t FROM Usuario t"),
-				@NamedQuery(name = "Usuario.findColumnName", query = "SELECT t FROM Usuario t WHERE t.nome = :nome") })
+		@NamedQuery(name = "Usuario.findColumnName", query = "SELECT t FROM Usuario t WHERE t.nome = :nome") })
 public class Usuario implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -21,6 +21,18 @@ public class Usuario implements Serializable {
 	private String nome;
 	private String senha;
 	private boolean ativo;
+
+	public Usuario() {
+		super();
+	}
+
+	public Usuario(Long id, String nome, String senha, boolean ativo) {
+		super();
+		this.id = id;
+		this.nome = nome;
+		this.senha = senha;
+		this.ativo = ativo;
+	}
 
 	public Long getId() {
 		return id;
