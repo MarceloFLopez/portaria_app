@@ -5,7 +5,7 @@ public class TabModelTeste {
 	// listAll
 	// Empresa
 	public static void main(String[] args) {
-		TabEmpresaClient client = new TabEmpresaClient();
+		TabPessoaClient client = new TabPessoaClient();
 		client.listAll().forEach(a ->{
 			System.out.println(a.toString());
 		});
