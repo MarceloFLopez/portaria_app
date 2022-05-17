@@ -79,19 +79,19 @@
 				<p:panel id="pnlAdd">
 
 					<h:panelGrid columns="3" cellpadding="3">
-						<p:outputLabel value="Nome" />
-						<p:inputText size="40" placeholder="Nome"
+						<p:outputLabel value="" />
+						<p:inputText size="40" placeholder="Nome" 
 							value="#{tabPessoaBean.tabPessoa.name}"
 							onkeypress="if (event.keyCode == 13) { return false; }" />
 					</h:panelGrid>
 
 					<h:panelGrid columns="3" cellpadding="3">
-						<p:outputLabel value="CPF" />
-						<p:inputText size="40" placeholder="CPF"
-							value="#{tabPessoaBean.tabPessoa.cpf}"
+						<p:outputLabel value="" />
+						<p:inputText size="40" placeholder="CPF" value="#{tabPessoaBean.tabPessoa.cpf}"
 							onkeypress="if (event.keyCode == 13) { return false; }" />
 					</h:panelGrid>
-
+					
+					
 					<p:separator />
 				</p:panel>
 				<p:panel>
