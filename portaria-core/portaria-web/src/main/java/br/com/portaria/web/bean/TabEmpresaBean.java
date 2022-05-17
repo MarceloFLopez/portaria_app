@@ -12,6 +12,7 @@ import br.com.portaria.domain.TabEmpresa;
 import br.com.portaria.wbusiness.TabEmpresaBO;
 import br.com.portaria.web.util.FacesUtil;
 
+import javax.annotation.PostConstruct;
 import javax.faces.event.ActionEvent;
 
 @Named
@@ -25,8 +26,12 @@ public class TabEmpresaBean implements Serializable{
 	private List<TabEmpresa> tabEmpresaList;
 	private List<TabEmpresa> tabEmpresaListFilter;
 
-	//GETs and SETs
+	@PostConstruct
+	public void salvar() {
+		TabEmpresa empresa = new TabEmpresa();
+	}
 	
+	//GETs and SETs
 	public TabEmpresa getTabEmpresa() {
 		if (tabEmpresa == null) {
 			tabEmpresa = new TabEmpresa();
@@ -89,8 +94,9 @@ public class TabEmpresaBean implements Serializable{
 		this.tabEmpresa = t;
 	}
 	
+
 	public void newItem(TabEmpresa t) {
-		this.tabEmpresa = new TabEmpresa();
+		 tabEmpresa = new TabEmpresa();
 	}
 
 	public void delete(TabEmpresa t) {

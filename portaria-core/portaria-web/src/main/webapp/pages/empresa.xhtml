@@ -22,7 +22,7 @@
 					<h:outputText value="Cadastro de Empresas" />
 				</f:facet>
 				<f:facet name="right">
-					<p:commandButton value="New Item" icon="pi pi-plus-circle" actionListener="#{tabEmpresaBean.newItem()}" update="form , form:pnlAdd" oncomplete="PF('Add').show()" style="width: 150px !important;"/>
+					<p:commandButton value="New Item" icon="pi pi-plus-circle" actionListener="#{tabEmpresaBean.tabEmpresa.newItem}" update="form , form:pnlAdd" oncomplete="PF('Add').show()" style="width: 150px !important;"/>
 				</f:facet>		
 			</p:toolbar>	
 			<p:dataTable widgetVar="dataTableWidgetVar" id="tab" var="t" editable="true"

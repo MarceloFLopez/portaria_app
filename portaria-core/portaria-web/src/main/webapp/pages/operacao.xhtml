@@ -31,37 +31,34 @@
 				rowsPerPageTemplate="10,20,30,40"
 				rows="10" filterEvent="enter"
 				paginatorTemplate="{RowsPerPageDropdown} Linhas {CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {Exporters}"
-				paginator="true">
+				paginator="true"
+				emptyMessage="Nenhum registro encontrado!">
 				
 				<f:facet name="{Exporters}">
 					<h:commandLink immediate="true">
 						<p:graphicImage value="/images/.png"
 							style="float:right !important;  margin-left:10px; margin-right:10px; max-width:30px; max-height:30px; width: auto; height: auto; border-radius: 1px;"
 							title="Excel xlsx" />
-						<p:dataExporter type="xlsxstream" target="tab" fileName="TabEmpresa"/>						
+						<p:dataExporter type="xlsxstream" target="tab" fileName="TabOperacao"/>						
 					</h:commandLink>						
 				</f:facet>
 				
 				<p:column headerText="Id" width="60" style="text-align: center;">
 					<h:outputText value="#{t.id}" />
 				</p:column>	
-				<p:column headerText="Data" filterBy="#{t.data}" filterMatchMode="contains">
+				
+				<p:column headerText="Data" filterBy="#{t.data}" filterMatchMode="contains" width="200" style="text-align: center;" >
 					<h:outputText value="#{t.data}" />
-				</p:column>
-				<p:column headerText="Operacao" filterBy="#{t.name}" filterMatchMode="contains" width="200" style="text-align: center;" >
-					<h:outputText value="#{t.name}" />
 				</p:column>	
 				
-					</p:column>
-				<p:column headerText="Descrição" filterBy="#{t.name}" filterMatchMode="contains" width="200" style="text-align: center;" >
+				<p:column headerText="Nome" filterBy="#{t.name}" filterMatchMode="contains">
 					<h:outputText value="#{t.name}" />
-				</p:column>	
+				</p:column>
 
 				<p:column headerText="-" width="40" style="text-align: center;">
 					<p:commandButton title="Select Item" icon="pi pi-pencil" actionListener="#{tabOperacaoBean.selectItem(t)}" update="form , form:pnlAdd" 
 					oncomplete="PF('Add').show()" />
 				</p:column>	
-				
 				<p:column headerText="-" width="40" style="text-align: center;">
 					<p:commandButton title="Delete Item" icon="pi pi-trash" styleClass="deletButton" actionListener="#{tabOperacaoBean.delete(t)}" 
 					update="form" oncomplete="PF('dataTableWidgetVar').filter()" />
@@ -75,7 +72,14 @@
 						<p:outputLabel value="Nome" />
 						<p:inputText  size="40" placeholder="Nome" value="#{tabOperacaoBean.tabOperacao.name}" onkeypress="if (event.keyCode == 13) { return false; }" />
 					</h:panelGrid>
-				
+					
+					<h:panelGrid columns="3" cellpadding="3">
+					<p:outputLabel value="Data"/>
+						<p:calendar required="true" requiredMessage="O campo Data é obrigatório" pattern="dd/MM/yyyy"  value="#{tabOperacaoBean.tabOperacao.data}" onkeypress="if (event.keyCode == 13) { return false; }"	/>
+					</h:panelGrid>
+					
+					
+					
 					<p:separator/>
 				</p:panel>	
 				<p:panel>

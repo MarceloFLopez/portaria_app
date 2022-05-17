@@ -69,7 +69,7 @@ public class TabOperacaoAPI {
 	@Path("remover/{id}")
 	@Produces(MediaType.APPLICATION_XML)
 	public String remover(@PathParam("id") String id) throws Exception {
-		operacaoBO.remover(operacaoBO.findId(new Long(id)));
+		operacaoBO.remove(operacaoBO.findId(new Long(id)));
 		return "Removido com sucesso!";
 	}
 	

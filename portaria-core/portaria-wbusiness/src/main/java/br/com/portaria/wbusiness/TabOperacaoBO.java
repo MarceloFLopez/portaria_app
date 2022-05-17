@@ -39,7 +39,7 @@ public class TabOperacaoBO implements Serializable {
 				tabOperacaoDAO.crudUtil().atualiza(t);
 			}
 		}
-		public void remover(TabOperacao t) throws Exception{
+		public void remove(TabOperacao t) throws Exception{
 			tabOperacaoDAO.crudUtil().remove(t);
 		}	
 		

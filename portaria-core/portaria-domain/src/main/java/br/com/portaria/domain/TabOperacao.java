@@ -28,7 +28,7 @@ public class TabOperacao implements Serializable {
 	public TabOperacao(Long id, String name, Date data) {
 		this.id = id;
 		this.name = name;
-		this.data = new Date();
+		this.data = data;
 	}
 
 	public Long getId() {
@@ -48,7 +48,7 @@ public class TabOperacao implements Serializable {
 	}
 
 	public Date getData() {
-		return new Date();
+		return data;
 	}
 
 	public void setData(Date data) {

@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.faces.event.ActionEvent;
 import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -11,9 +12,6 @@ import javax.inject.Named;
 import br.com.portaria.domain.TabOperacao;
 import br.com.portaria.wbusiness.TabOperacaoBO;
 import br.com.portaria.web.util.FacesUtil;
-
-import javax.annotation.PostConstruct;
-import javax.faces.event.ActionEvent;
 
 @Named
 @ViewScoped
@@ -26,11 +24,6 @@ public class TabOperacaoBean implements Serializable{
 	private List<TabOperacao> tabOperacaoList;
 	private List<TabOperacao> tabOperacaoListFilter;
 
-	@PostConstruct
-	public void newItem(TabOperacao t) {
-		this.tabOperacao = new TabOperacao();
-	}
-	
 	//GETs and SETs
 	
 	public TabOperacao getTabOperacao() {
@@ -65,8 +58,6 @@ public class TabOperacaoBean implements Serializable{
 	
 	// CRUD
 	
-
-	
 	public void listAll() {
 		try {
 			// list
@@ -96,11 +87,14 @@ public class TabOperacaoBean implements Serializable{
 	public void selectItem(TabOperacao t) {
 		this.tabOperacao = t;
 	}
-
+	
+	public void newItem(TabOperacao t) {
+		this.tabOperacao = new TabOperacao();
+	}
 
 	public void delete(TabOperacao t) {
 		try {
-			tabOperacaoBO.remover(t);
+			tabOperacaoBO.remove(t);
 			FacesUtil.addMsgSucessfull();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -109,7 +103,7 @@ public class TabOperacaoBean implements Serializable{
 	}
 	
 	public String refreshPage() {
-		return "/pages/empresa.xhtml?faces-redirect=true";
+		return "/pages/operacao.xhtml?faces-redirect=true";
 	}
 	
 }
