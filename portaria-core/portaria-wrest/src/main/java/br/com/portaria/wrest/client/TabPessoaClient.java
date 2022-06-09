@@ -22,7 +22,7 @@ import br.com.portaria.domain.util.DateSerializer;
 public class TabPessoaClient implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
-	// URL http://localhost:8080/portaria-wrest/rest/tabpessoaapi/findColumnName/
+	// URL http://localhost:8080/portaria-wrest/rest/tabpessoaapi/listAll/
 	private final String HOSTNAME = "http://localhost:8080/"; // teste
 	private final String API = "portaria-wrest/rest/";//
 	private final String PATH = "tabpessoaapi/";

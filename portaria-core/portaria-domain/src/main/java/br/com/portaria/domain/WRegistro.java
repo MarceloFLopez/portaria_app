@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
@@ -23,21 +24,21 @@ public class WRegistro implements Serializable {
 	private Date date;
 
 	@ManyToOne
+	@JoinColumn
 	private Usuario usuario;
 
 	@ManyToOne
-	private TabPessoa pessoa;
+	@JoinColumn
+	private TabCadastro cadastro;
 
 	public WRegistro() {
-
 	}
 
-	public WRegistro(Long id, Date date, Usuario usuario, TabPessoa pessoa) {
-		super();
+	public WRegistro(Long id, Date date, Usuario usuario, TabCadastro cadastro) {
 		this.id = id;
 		this.date = date;
 		this.usuario = usuario;
-		this.pessoa = pessoa;
+		this.cadastro = cadastro;
 	}
 
 	public Long getId() {
@@ -56,42 +57,25 @@ public class WRegistro implements Serializable {
 		this.date = date;
 	}
 
-	public TabPessoa getPessoa() {
-		return pessoa;
+	public Usuario getUsuario() {
+		return usuario;
 	}
 
-	public void setPessoa(TabPessoa pessoa) {
-		this.pessoa = pessoa;
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
 	}
 
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((id == null) ? 0 : id.hashCode());
-		return result;
+	public TabCadastro getCadastro() {
+		return cadastro;
 	}
 
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		WRegistro other = (WRegistro) obj;
-		if (id == null) {
-			if (other.id != null)
-				return false;
-		} else if (!id.equals(other.id))
-			return false;
-		return true;
+	public void setCadastro(TabCadastro cadastro) {
+		this.cadastro = cadastro;
 	}
 
 	@Override
 	public String toString() {
-		return "WRegistro [id=" + id + ", date=" + date + ", usuario=" + usuario + ", pessoa=" + pessoa + "]";
+		return "WRegistro [id=" + id + ", date=" + date + ", usuario=" + usuario + ", cadastro=" + cadastro + "]";
 	}
 
 }

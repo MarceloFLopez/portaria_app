@@ -24,6 +24,11 @@ public class TabOperacao implements Serializable {
 	
 	public TabOperacao() {
 	}
+	public TabOperacao(String name, Date data) {
+		this.name = name;
+		this.data = data;
+	}
+
 	
 	public TabOperacao(Long id, String name, Date data) {
 		this.id = id;

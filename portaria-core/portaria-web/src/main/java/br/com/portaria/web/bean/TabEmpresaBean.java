@@ -4,6 +4,8 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.annotation.PostConstruct;
+import javax.faces.event.ActionEvent;
 import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -11,9 +13,6 @@ import javax.inject.Named;
 import br.com.portaria.domain.TabEmpresa;
 import br.com.portaria.wbusiness.TabEmpresaBO;
 import br.com.portaria.web.util.FacesUtil;
-
-import javax.annotation.PostConstruct;
-import javax.faces.event.ActionEvent;
 
 @Named
 @ViewScoped
@@ -26,6 +25,7 @@ public class TabEmpresaBean implements Serializable{
 	private List<TabEmpresa> tabEmpresaList;
 	private List<TabEmpresa> tabEmpresaListFilter;
 
+	@SuppressWarnings("unused")
 	@PostConstruct
 	public void salvar() {
 		TabEmpresa empresa = new TabEmpresa();

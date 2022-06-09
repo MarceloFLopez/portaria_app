@@ -6,7 +6,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
@@ -27,51 +26,15 @@ public class TabPessoa implements Serializable {
 	private String name;
 	private String cpf;
 
-	@ManyToOne
-	private TabEmpresa empresa;
-
-	@ManyToOne
-	private TabOperacao operacao;
-
-	@ManyToOne
-	private TabTransporte transporte;
-
 	public TabPessoa() {
 
 	}
 
-	public TabPessoa(Long id, String name, String cpf, TabEmpresa empresa, TabOperacao operacao,
-			TabTransporte transporte) {
+	public TabPessoa(Long id, String name, String cpf) {
+		super();
 		this.id = id;
 		this.name = name;
 		this.cpf = cpf;
-		this.empresa = empresa;
-		this.operacao = operacao;
-		this.transporte = transporte;
-	}
-
-	public TabEmpresa getEmpresa() {
-		return empresa;
-	}
-
-	public void setEmpresa(TabEmpresa empresa) {
-		this.empresa = empresa;
-	}
-
-	public TabOperacao getOperacao() {
-		return operacao;
-	}
-
-	public void setOperacao(TabOperacao operacao) {
-		this.operacao = operacao;
-	}
-
-	public TabTransporte getTransporte() {
-		return transporte;
-	}
-
-	public void setTransporte(TabTransporte transporte) {
-		this.transporte = transporte;
 	}
 
 	public Long getId() {
@@ -125,8 +88,7 @@ public class TabPessoa implements Serializable {
 
 	@Override
 	public String toString() {
-		return "TabPessoa [id=" + id + ", name=" + name + ", cpf=" + cpf + ", empresa=" + empresa + ", operacao="
-				+ operacao + ", transporte=" + transporte + "]";
+		return "TabPessoa [id=" + id + ", name=" + name + ", cpf=" + cpf + "]";
 	}
 
 }

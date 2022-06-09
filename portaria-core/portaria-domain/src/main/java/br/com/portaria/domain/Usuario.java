@@ -23,11 +23,9 @@ public class Usuario implements Serializable {
 	private boolean ativo;
 
 	public Usuario() {
-		super();
 	}
 
 	public Usuario(Long id, String nome, String senha, boolean ativo) {
-		super();
 		this.id = id;
 		this.nome = nome;
 		this.senha = senha;
