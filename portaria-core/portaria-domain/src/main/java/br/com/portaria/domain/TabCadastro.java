@@ -10,8 +10,10 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "tb_cadastro")
 @NamedQueries({ @NamedQuery(name = "TabCadastro.listAll", query = "SELECT t FROM TabCadastro t")})
 public class TabCadastro implements Serializable {
 

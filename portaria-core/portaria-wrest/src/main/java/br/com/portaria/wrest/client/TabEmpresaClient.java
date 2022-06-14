@@ -20,7 +20,7 @@ import br.com.portaria.domain.util.DateSerializer;
 @Named
 public class TabEmpresaClient {
 
-	// URL http://localhost:8080/portaria-wrest/rest/tabempresaapi/listAll
+	// URL http://192.168.2.145:8080/portaria-wrest/rest/tabempresaapi/listAll
 	private final String HOSTNAME = "http://192.168.2.145:8080/";
 	private final String API = "portaria-wrest/rest/";
 	private final String PATH = "tabempresaapi/";
