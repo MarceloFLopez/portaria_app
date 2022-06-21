@@ -11,7 +11,7 @@ import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 @Entity
-@Table(name = "tb_empresa", uniqueConstraints = { @UniqueConstraint(columnNames = { "cnpj"}) })
+@Table(uniqueConstraints = { @UniqueConstraint(columnNames = { "cnpj"}) })
 @NamedQueries({ @NamedQuery(name = "TabEmpresa.listAll", query = "SELECT t FROM TabEmpresa t"),
 	        	@NamedQuery(name = "TabEmpresa.findColumnName", query = "SELECT t FROM TabEmpresa t WHERE t.name = :name" ),
 	        	@NamedQuery(name = "TabEmpresa.findColumnCnpj", query = "SELECT t FROM TabEmpresa t WHERE t.cnpj = :cnpj" )})
