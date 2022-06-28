@@ -24,17 +24,18 @@ public class TabPessoa implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String name;
+	private String telefone;
 	private String cpf;
 
-	public TabPessoa() {
-
-	}
-
-	public TabPessoa(Long id, String name, String cpf) {
-		super();
+	public TabPessoa(Long id, String name, String telefone, String cpf) {
 		this.id = id;
 		this.name = name;
+		this.telefone = telefone;
 		this.cpf = cpf;
+	}
+
+	public TabPessoa() {
+		super();
 	}
 
 	public Long getId() {
@@ -51,6 +52,14 @@ public class TabPessoa implements Serializable {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public String getTelefone() {
+		return telefone;
+	}
+
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
 	}
 
 	public String getCpf() {
@@ -88,7 +97,7 @@ public class TabPessoa implements Serializable {
 
 	@Override
 	public String toString() {
-		return "TabPessoa [id=" + id + ", name=" + name + ", cpf=" + cpf + "]";
+		return "TabPessoa [id=" + id + ", name=" + name + ", telefone=" + telefone + ", cpf=" + cpf + "]";
 	}
 
 }

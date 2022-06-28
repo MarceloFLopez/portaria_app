@@ -10,11 +10,12 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
+
 @Entity
-@Table(uniqueConstraints = { @UniqueConstraint(columnNames = { "cnpj"}) })
+@Table(uniqueConstraints = { @UniqueConstraint(columnNames = { "cnpj" }) })
 @NamedQueries({ @NamedQuery(name = "TabEmpresa.listAll", query = "SELECT t FROM TabEmpresa t"),
-	        	@NamedQuery(name = "TabEmpresa.findColumnName", query = "SELECT t FROM TabEmpresa t WHERE t.name = :name" ),
-	        	@NamedQuery(name = "TabEmpresa.findColumnCnpj", query = "SELECT t FROM TabEmpresa t WHERE t.cnpj = :cnpj" )})
+		@NamedQuery(name = "TabEmpresa.findColumnName", query = "SELECT t FROM TabEmpresa t WHERE t.name = :name"),
+		@NamedQuery(name = "TabEmpresa.findColumnCnpj", query = "SELECT t FROM TabEmpresa t WHERE t.cnpj = :cnpj") })
 public class TabEmpresa implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -24,37 +25,55 @@ public class TabEmpresa implements Serializable {
 	private Long id;
 	private String cnpj;
 	private String name;
+	private String telefone;
 
-
-		
 	public TabEmpresa() {
 	}
-	public TabEmpresa( String cnpj, String name) {
+
+	public TabEmpresa(Long id, String cnpj, String name, String telefone) {
+		this.id = id;
 		this.cnpj = cnpj;
 		this.name = name;
+		this.telefone = telefone;
 	}
+
+	public String getTelefone() {
+		return telefone;
+	}
+
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
+	}
+
 	public Long getId() {
 		return id;
 	}
+
 	public void setId(Long id) {
 		this.id = id;
 	}
+
 	public String getCnpj() {
 		return cnpj;
 	}
+
 	public void setCnpj(String cnpj) {
 		this.cnpj = cnpj;
 	}
+
 	public String getName() {
 		return name;
 	}
+
 	public void setName(String name) {
 		this.name = name;
 	}
+
 	@Override
 	public String toString() {
-		return "TabEmpresa [id=" + id + ", cnpj=" + cnpj + ", name=" + name + "]";
+		return "TabEmpresa [id=" + id + ", cnpj=" + cnpj + ", name=" + name + ", telefone=" + telefone + "]";
 	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -62,6 +81,7 @@ public class TabEmpresa implements Serializable {
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		return result;
 	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)

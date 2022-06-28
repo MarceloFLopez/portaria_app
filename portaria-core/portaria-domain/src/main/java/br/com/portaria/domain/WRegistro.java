@@ -21,7 +21,7 @@ public class WRegistro implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	private Date date;
+	private Date data = new Date() ;
 
 	@ManyToOne
 	@JoinColumn
@@ -35,8 +35,9 @@ public class WRegistro implements Serializable {
 	}
 
 	public WRegistro(Long id, Date date, Usuario usuario, TabCadastro cadastro) {
+		super();
 		this.id = id;
-		this.date = date;
+		this.data = date;
 		this.usuario = usuario;
 		this.cadastro = cadastro;
 	}
@@ -49,12 +50,12 @@ public class WRegistro implements Serializable {
 		this.id = id;
 	}
 
-	public Date getDate() {
-		return date;
+	public Date getData() {
+		return data;
 	}
 
-	public void setDate(Date date) {
-		this.date = date;
+	public void setData(Date data) {
+		this.data = data;
 	}
 
 	public Usuario getUsuario() {
@@ -75,7 +76,8 @@ public class WRegistro implements Serializable {
 
 	@Override
 	public String toString() {
-		return "WRegistro [id=" + id + ", date=" + date + ", usuario=" + usuario + ", cadastro=" + cadastro + "]";
+		return "WRegistro [id=" + id + ", data=" + data + ", usuario=" + usuario + ", cadastro=" + cadastro + "]";
 	}
 
+	
 }

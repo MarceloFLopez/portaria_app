@@ -10,7 +10,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
-import javax.persistence.Table;
 
 @Entity
 @NamedQueries({ @NamedQuery(name = "TabCadastro.listAll", query = "SELECT t FROM TabCadastro t")})
