@@ -30,7 +30,6 @@ public class TabPessoaClient implements Serializable {
 	public List<TabPessoa> listAll() {
 		Gson gson = new Gson();
 		Client c = Client.create();
-		// GET example
 		WebResource wr = c.resource(HOSTNAME + API + PATH + "listAll/");
 		String json = wr.get(String.class);
 		gson = new GsonBuilder().registerTypeAdapter(Date.class, new DateDeserializer()).create();
@@ -42,7 +41,6 @@ public class TabPessoaClient implements Serializable {
 	public TabPessoa findColumnModel(String value) {
 		Gson gson = new Gson();
 		Client c = Client.create();
-		// GET example
 		WebResource wr = c.resource(HOSTNAME + API + PATH + "findColumnName/" + value);
 		String json = wr.get(String.class);
 		gson = new GsonBuilder().registerTypeAdapter(Date.class, new DateDeserializer()).create();
@@ -54,7 +52,6 @@ public class TabPessoaClient implements Serializable {
 	public TabPessoa findColumnCpf(String value) {
 		Gson gson = new Gson();
 		Client c = Client.create();
-		// GET example
 		WebResource wr = c.resource(HOSTNAME + API + PATH + "findColumnCpf/" + value);
 		String json = wr.get(String.class);
 		gson = new GsonBuilder().registerTypeAdapter(Date.class, new DateDeserializer()).create();
@@ -66,7 +63,6 @@ public class TabPessoaClient implements Serializable {
 	public TabPessoa findId(String id) {
 		Gson gson = new Gson();
 		Client c = Client.create();
-		// GET example
 		WebResource wr = c.resource(HOSTNAME + API + PATH + "findId/" + id);
 		String json = wr.get(String.class);
 		gson = new GsonBuilder().registerTypeAdapter(Date.class, new DateDeserializer()).create();

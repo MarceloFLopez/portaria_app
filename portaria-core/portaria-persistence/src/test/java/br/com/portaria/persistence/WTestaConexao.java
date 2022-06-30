@@ -17,9 +17,7 @@ import br.com.portaria.persistence.util.JPAUtil;
 public class WTestaConexao {
 
 	public static void main(String[] args) throws Exception {
-		
-		
-		
+				
 		EntityManager em = JPAUtil.getEntityManager();
 
 		CRUDUtil<TabEmpresa> er = new CRUDUtil<TabEmpresa>(em, TabEmpresa.class);

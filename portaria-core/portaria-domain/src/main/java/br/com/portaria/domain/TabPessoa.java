@@ -14,8 +14,8 @@ import javax.persistence.UniqueConstraint;
 @Entity
 @Table(uniqueConstraints = { @UniqueConstraint(columnNames = { "cpf" }) })
 @NamedQueries({ @NamedQuery(name = "TabPessoa.listAll", query = "SELECT t FROM TabPessoa t"),
-		@NamedQuery(name = "TabPessoa.findColumName", query = "SELECT t FROM TabPessoa t WHERE t.name = :name"),
-		@NamedQuery(name = "TabPessoa.findColumnCpf", query = "SELECT t FROM TabPessoa t WHERE t.cpf = :cpf"), })
+		@NamedQuery(name = "TabPessoa.findColumName", query = "SELECT t.name FROM TabPessoa t WHERE t.name = :name"),
+		@NamedQuery(name = "TabPessoa.findColumnCpf", query = "SELECT t.cpf FROM TabPessoa t WHERE t.cpf = :cpf"), })
 public class TabPessoa implements Serializable {
 
 	private static final long serialVersionUID = 1L;
