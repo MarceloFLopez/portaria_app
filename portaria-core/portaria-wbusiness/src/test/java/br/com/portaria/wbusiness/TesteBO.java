@@ -1,10 +1,11 @@
 package br.com.portaria.wbusiness;
 
+import org.junit.Test;
+
 public class TesteBO {
 
-	public static void main(String[] args) throws Exception {
-
-	
+	@Test
+	public void imprimeTeste() {
+		System.out.println("Teste");
 	}
-
 }
