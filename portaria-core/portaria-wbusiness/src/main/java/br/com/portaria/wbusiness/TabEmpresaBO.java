@@ -16,9 +16,6 @@ public class TabEmpresaBO implements Serializable {
 		@Inject
 		private TabEmpresaDAO tabEmpresaDAO;
 		
-		/**
-		 * BO example, TabEmpresa class
-		 * */
 		public List<TabEmpresa> listAll() throws Exception{
 			return tabEmpresaDAO.ListAll();
 		}

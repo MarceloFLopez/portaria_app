@@ -68,14 +68,6 @@ public class CRUDUtil<T> implements Serializable {
 		return instancia;
 	}
 
-	public List<T> listaTodosPaginada(int firstResult, int maxResults) {
-		CriteriaQuery<T> query = em.getCriteriaBuilder().createQuery(classe);
-		query.select(query.from(classe));
-		List<T> lista = em.createQuery(query)
-				.setFirstResult(firstResult)
-				.setMaxResults(maxResults)
-				.getResultList();
-		return lista;
-	}
+
 
 }
