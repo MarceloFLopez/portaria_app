@@ -28,7 +28,6 @@ public class TabEmpresaClient {
 	public List<TabEmpresa> listAll() {
 		Gson gson = new Gson();
 		Client c = Client.create();
-		// GET example
 		WebResource wr = c.resource(HOSTNAME + API + PATH + "listAll/");
 		String json = wr.get(String.class);
 		gson = new GsonBuilder().registerTypeAdapter(Date.class, new DateDeserializer()).create();
@@ -40,7 +39,6 @@ public class TabEmpresaClient {
 	public TabEmpresa findColumnName(String value) {
 		Gson gson = new Gson();
 		Client c = Client.create();
-		// GET example
 		WebResource wr = c.resource(HOSTNAME + API + PATH + "findColumnName/" + value);
 		String json = wr.get(String.class);
 		gson = new GsonBuilder().registerTypeAdapter(Date.class, new DateDeserializer()).create();
@@ -52,7 +50,6 @@ public class TabEmpresaClient {
 	public TabEmpresa findColumnCnpj(String value) {
 		Gson gson = new Gson();
 		Client c = Client.create();
-		// GET example
 		WebResource wr = c.resource(HOSTNAME + API + PATH + "findColumnCnpj/" + value);
 		String json = wr.get(String.class);
 		gson = new GsonBuilder().registerTypeAdapter(Date.class, new DateDeserializer()).create();
@@ -65,7 +62,6 @@ public class TabEmpresaClient {
 	public TabEmpresa findId(String id) {
 		Gson gson = new Gson();
 		Client c = Client.create();
-		// GET example
 		WebResource wr = c.resource(HOSTNAME + API + PATH + "findId/" + id);
 		String json = wr.get(String.class);
 		gson = new GsonBuilder().registerTypeAdapter(Date.class, new DateDeserializer()).create();
